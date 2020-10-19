@@ -1,0 +1,41 @@
+
+:dataAccess.DataAccess#getEventList()Ljava/util/Collection;W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaØ Ø(&"1*¯
+
+1W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÙ Ù(¬
+©
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÙ Ù(%
+%0javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+dbîë
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÙ Ù(P"
+%1javax.persistence.TypedQuery"njavax.persistence.EntityManager#createQuery(Ljava/lang/String;Ljava/lang/Class;)Ljavax/persistence/TypedQuery;*'
+%
+%0javax.persistence.EntityManager*
+SELECT p FROM Event p*
+""20createQuery(Ljava/lang/String;Ljava/lang/Class;)¯
+¬
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÙ Ù(Q%
+queryjavax.persistence.TypedQuery"__id*$
+"
+%1javax.persistence.TypedQueryêç
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÚ Ú(/
+%2java.util.List"<javax.persistence.TypedQuery#getResultList()Ljava/util/List;*'
+%
+queryjavax.persistence.TypedQuery2getResultList()—
+”
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÚ Ú(0
+	gertaerakjava.util.List"__id*
+
+%2java.util.List"x
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÛ Û(
+
+	gertaerakjava.util.ListB
+dataAccess.DataAccess

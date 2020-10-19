@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GertaeraKantzelatu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">GertaeraKantzelatu.java</span></div><h1>GertaeraKantzelatu.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Rectangle;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.toedter.calendar.JCalendar;
+
+import businessLogic.BLFacade;
+import configuration.UtilDate;
+import domain.Event;
+
+import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+
+public class GertaeraKantzelatu extends JFrame{
+
+	private JCalendar jCalendar;
+<span class="nc" id="L37">	private Calendar calendarMio = null;</span>
+	private JPanel contentPane;
+	
+<span class="nc" id="L40">	private JLabel lblGertaerak = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;ChooseEvent&quot;));</span>
+
+	private JComboBox&lt;Event&gt; comboBoxGertaerak;
+<span class="nc" id="L43">	private DefaultComboBoxModel&lt;Event&gt; gertaerak = new DefaultComboBoxModel&lt;Event&gt;();</span>
+	
+<span class="nc" id="L45">	private JButton btnAtzera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Back&quot;));</span>
+<span class="nc" id="L46">	private JButton btnBtngertaerakantzelatu = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;CancelEvent&quot;));</span>
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L53">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L56">					GertaeraKantzelatu window = new GertaeraKantzelatu();</span>
+<span class="nc" id="L57">					window.setVisible(true);</span>
+<span class="nc" id="L58">				} catch (Exception e) {</span>
+<span class="nc" id="L59">					e.printStackTrace();</span>
+<span class="nc" id="L60">				}</span>
+<span class="nc" id="L61">			}</span>
+		});
+<span class="nc" id="L63">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L68">	public GertaeraKantzelatu() {</span>
+
+<span class="nc" id="L70">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L71">		setBounds(100, 100, 483, 331);</span>
+<span class="nc" id="L72">		contentPane = new JPanel();</span>
+<span class="nc" id="L73">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="nc" id="L74">		setContentPane(contentPane);</span>
+<span class="nc" id="L75">		getContentPane().setLayout(null);</span>
+
+<span class="nc" id="L77">		jCalendar = new JCalendar();</span>
+<span class="nc" id="L78">		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));</span>
+<span class="nc" id="L79">		jCalendar.setBounds(115, 16, 225, 150);</span>
+<span class="nc" id="L80">		getContentPane().add(jCalendar);</span>
+		
+<span class="nc" id="L82">		lblGertaerak.setBounds(40, 192, 276, 14);</span>
+<span class="nc" id="L83">		contentPane.add(lblGertaerak);</span>
+		
+<span class="nc" id="L85">		comboBoxGertaerak = new JComboBox&lt;Event&gt;();</span>
+<span class="nc" id="L86">		comboBoxGertaerak.setBounds(50, 222, 186, 25);</span>
+<span class="nc" id="L87">		contentPane.add(comboBoxGertaerak);</span>
+<span class="nc" id="L88">		comboBoxGertaerak.setModel(gertaerak);</span>
+		
+<span class="nc" id="L90">		btnAtzera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L92">				setVisible(false);</span>
+<span class="nc" id="L93">				AdminPantaila ap = new AdminPantaila();</span>
+<span class="nc" id="L94">				ap.setVisible(true);</span>
+<span class="nc" id="L95">				dispose();</span>
+<span class="nc" id="L96">			}</span>
+		});
+<span class="nc" id="L98">		btnAtzera.setBounds(317, 223, 96, 24);</span>
+<span class="nc" id="L99">		contentPane.add(btnAtzera);</span>
+		
+<span class="nc" id="L101">		btnBtngertaerakantzelatu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L103">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">				if(comboBoxGertaerak.getSelectedItem()!=null) {</span>
+<span class="nc" id="L105">					Event ger = (Event) comboBoxGertaerak.getSelectedItem();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">					if(ger.getEventDate().compareTo(Calendar.getInstance().getTime())&gt;0) {</span>
+<span class="nc" id="L107">						bl.gertaeraKantzelatu(ger);</span>
+<span class="nc" id="L108">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EventCancelled&quot;));</span>
+<span class="nc" id="L109">						setVisible(false);</span>
+<span class="nc" id="L110">						AdminPantaila ap = new AdminPantaila();</span>
+<span class="nc" id="L111">						ap.setVisible(true);</span>
+<span class="nc" id="L112">						dispose();</span>
+<span class="nc" id="L113">					}</span>
+					else {
+<span class="nc" id="L115">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;WrongEventDate&quot;));</span>
+					}
+<span class="nc" id="L117">				}</span>
+				else {
+<span class="nc" id="L119">					JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoEventToCancel&quot;));</span>
+				}
+<span class="nc" id="L121">			}</span>
+		});
+<span class="nc" id="L123">		btnBtngertaerakantzelatu.setBounds(285, 185, 161, 29);</span>
+<span class="nc" id="L124">		contentPane.add(btnBtngertaerakantzelatu);</span>
+		
+		
+		//Calendar kontrolatzeko:
+<span class="nc" id="L128">		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {</span>
+			public void propertyChange(PropertyChangeEvent propertychangeevent) {
+				//						this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+				//							public void propertyChange(PropertyChangeEvent propertychangeevent) {
+<span class="nc bnc" id="L132" title="All 2 branches missed.">				if (propertychangeevent.getPropertyName().equals(&quot;locale&quot;)) {</span>
+<span class="nc" id="L133">					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">				} else if (propertychangeevent.getPropertyName().equals(&quot;calendar&quot;)) {</span>
+<span class="nc" id="L135">					calendarMio = (Calendar) propertychangeevent.getNewValue();</span>
+<span class="nc" id="L136">					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());</span>
+<span class="nc" id="L137">					jCalendar.setCalendar(calendarMio);</span>
+<span class="nc" id="L138">					Date firstDay = UtilDate.trim(new Date(jCalendar.getCalendar().getTime().getTime()));</span>
+
+					try {
+<span class="nc" id="L141">						BLFacade facade = MainGUI.getBusinessLogic();</span>
+
+<span class="nc" id="L143">						Vector&lt;domain.Event&gt; events = facade.getEvents(firstDay);</span>
+
+<span class="nc bnc" id="L145" title="All 2 branches missed.">						if (events.isEmpty())</span>
+<span class="nc" id="L146">							lblGertaerak.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoEvents&quot;)</span>
+<span class="nc" id="L147">									+ &quot;: &quot; + dateformat1.format(calendarMio.getTime()));</span>
+						else
+<span class="nc" id="L149">							lblGertaerak.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Events&quot;) + &quot;: &quot;</span>
+<span class="nc" id="L150">									+ dateformat1.format(calendarMio.getTime()));</span>
+<span class="nc" id="L151">						comboBoxGertaerak.removeAllItems();</span>
+<span class="nc" id="L152">						System.out.println(&quot;Events &quot; + events);</span>
+
+<span class="nc bnc" id="L154" title="All 2 branches missed.">						for (domain.Event ev : events)</span>
+<span class="nc" id="L155">							gertaerak.addElement(ev);</span>
+<span class="nc" id="L156">						comboBoxGertaerak.repaint();</span>
+
+<span class="nc" id="L158">					} catch (Exception e1) {</span>
+
+<span class="nc" id="L160">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoEvents&quot;));</span>
+<span class="nc" id="L161">					}</span>
+
+				}
+<span class="nc" id="L164">				paintDaysWithEvents(jCalendar);</span>
+<span class="nc" id="L165">			}</span>
+		});
+
+<span class="nc" id="L168">	}</span>
+
+	//Margotzeko metodoa:
+	public static void paintDaysWithEvents(JCalendar jCalendar) {
+		// For each day in current month, it is checked if there are events, and in that
+		// case, the background color for that day is changed.
+
+<span class="nc" id="L175">		BLFacade facade = MainGUI.getBusinessLogic();</span>
+
+<span class="nc" id="L177">		Vector&lt;Date&gt; dates=facade.getEventsMonth(jCalendar.getDate());</span>
+
+<span class="nc" id="L179">		Calendar calendar = jCalendar.getCalendar();</span>
+
+<span class="nc" id="L181">		int month = calendar.get(Calendar.MONTH);</span>
+		//int today=calendar.get(Calendar.DAY_OF_MONTH);
+
+<span class="nc" id="L184">		calendar.set(Calendar.DAY_OF_MONTH, 1);</span>
+<span class="nc" id="L185">		int offset = calendar.get(Calendar.DAY_OF_WEEK);</span>
+
+<span class="nc bnc" id="L187" title="All 2 branches missed.">		if (Locale.getDefault().equals(new Locale(&quot;es&quot;)))</span>
+<span class="nc" id="L188">			offset += 4;</span>
+		else
+<span class="nc" id="L190">			offset += 5;</span>
+
+
+<span class="nc bnc" id="L193" title="All 2 branches missed.">		for (Date d:dates){</span>
+
+<span class="nc" id="L195">			calendar.setTime(d);</span>
+<span class="nc" id="L196">			System.out.println(d);</span>
+
+
+
+			// Obtain the component of the day in the panel of the DayChooser of the
+			// JCalendar.
+			// The component is located after the decorator buttons of &quot;Sun&quot;, &quot;Mon&quot;,... or
+			// &quot;Lun&quot;, &quot;Mar&quot;...,
+			// the empty days before day 1 of month, and all the days previous to each day.
+			// That number of components is calculated with &quot;offset&quot; and is different in
+			// English and Spanish
+			//						    		  Component o=(Component) jCalendar.getDayChooser().getDayPanel().getComponent(i+offset);; 
+<span class="nc" id="L208">			Component o = (Component) jCalendar.getDayChooser().getDayPanel()</span>
+<span class="nc" id="L209">					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);</span>
+<span class="nc" id="L210">			o.setBackground(Color.CYAN);</span>
+<span class="nc" id="L211">		}</span>
+
+<span class="nc" id="L213">		calendar.set(Calendar.DAY_OF_MONTH, 1);</span>
+<span class="nc" id="L214">		calendar.set(Calendar.MONTH, month);</span>
+
+<span class="nc" id="L216">	}</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

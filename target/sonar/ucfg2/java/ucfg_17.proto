@@ -1,0 +1,162 @@
+
+DdataAccess.DataAccess#apustuaEgin(Ljava/util/Date;FLdomain/Kuota;I)ZW
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÇ Ç("3*ø
+2W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÜ
+ Ü("a
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÜ Ü(
+""*ç
+3W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(¨
+©
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(%
+%0javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+db≤Ø
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ! É(7	
+%1int"domain.Kuota#getKuotaNumber()I*
+
+kuotadomain.Kuota2getKuotaNumber()∂≥
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(8
+%2domain.Kuota"[javax.persistence.EntityManager#find(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;*'
+%
+%0javax.persistence.EntityManager*
+""*
+	
+%1int2)find(Ljava/lang/Class;Ljava/lang/Object;)ã
+à
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÉ É(9
+kdomain.Kuota"__id*
+
+%2domain.Kuota¨
+©
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ( %
+%3javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+db¡æ
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ(G"
+%4domain.PertsonaErregistratua"[javax.persistence.EntityManager#find(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;*'
+%
+%3javax.persistence.EntityManager*
+""*
+""2)find(Ljava/lang/Class;Ljava/lang/Object;)≠
+™
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÑ Ñ(H#
+perdomain.PertsonaErregistratua"__id*$
+"
+%4domain.PertsonaErregistratuaÿ’
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaÖ Ö('
+%5float"1domain.PertsonaErregistratua#getDiruKantitatea()F*%
+#
+perdomain.PertsonaErregistratua2getDiruKantitatea()*
+2
+1*Ì
+1W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(¨
+©
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(%
+%6javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+dbôñ
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â()
+%7#javax.persistence.EntityTransaction"Ujavax.persistence.EntityManager#getTransaction()Ljavax/persistence/EntityTransaction;*'
+%
+%6javax.persistence.EntityManager2getTransaction()Ã…
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaâ â(
+
+%8void",javax.persistence.EntityTransaction#begin()V*+
+)
+%7#javax.persistence.EntityTransaction2begin()Å
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(
+%9domain.Apustua"domain.Apustua∂
+≥
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(:
+%10"Udomain.Apustua#<init>(Ljava/util/Date;FLdomain/PertsonaErregistratua;Ldomain/Kuota;)V*
+
+%9domain.Apustua*
+
+
+apustuDatajava.util.Date*
+""*%
+#
+perdomain.PertsonaErregistratua*
+
+kdomain.Kuotaè
+å
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaä ä(;
+adomain.Apustua"__id*
+
+%9domain.Apustuaöó
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaã ã(
+%11domain.Apustua"Idomain.PertsonaErregistratua#addApustua(Ldomain/Apustua;)Ldomain/Apustua;*%
+#
+perdomain.PertsonaErregistratua*
+
+adomain.Apustua2addApustua(Ldomain/Apustua;)¯ı
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaå å(
+%12domain.Apustua"9domain.Kuota#addApustua(Ldomain/Apustua;)Ldomain/Apustua;*
+
+kdomain.Kuota*
+
+adomain.Apustua2addApustua(Ldomain/Apustua;)—Œ
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaç ç( 
+%13float")domain.PertsonaErregistratua#addDirua(F)F*%
+#
+perdomain.PertsonaErregistratua*
+""2addDirua(F)≠
+™
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaé é(&
+%14javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+dbÖÇ
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaé é(
+%15void"<javax.persistence.EntityManager#persist(Ljava/lang/Object;)V*(
+&
+%14javax.persistence.EntityManager*
+
+adomain.Apustua2persist(Ljava/lang/Object;)≠
+™
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(&
+%16javax.persistence.EntityManager"__id*!*
+dataAccess.DataAccess"
+dbõò
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(*
+%17#javax.persistence.EntityTransaction"Ujavax.persistence.EntityManager#getTransaction()Ljavax/persistence/EntityTransaction;*(
+&
+%16javax.persistence.EntityManager2getTransaction()–Õ
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaè è(
+%18void"-javax.persistence.EntityTransaction#commit()V*,
+*
+%17#javax.persistence.EntityTransaction2commit()"a
+W
+K/Users/eiderrodriguez/git/Bets2021/src/main/java/dataAccess/DataAccess.javaê ê(
+"":
+
+apustuDatajava.util.Date:
+"":
+kuotadomain.Kuota:
+""B
+dataAccess.DataAccess

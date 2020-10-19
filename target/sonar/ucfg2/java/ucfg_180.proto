@@ -1,0 +1,52 @@
+
+IbusinessLogic.BLFacadeImplementation#getEventList()Ljava/util/Collection;f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¨ ¨(&"1*
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÇÄ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaª ª(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «((
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManageròï
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «(7
+%3java.util.Collection":dataAccess.DataAccess#getEventList()Ljava/util/Collection;*
+
+%2dataAccess.DataAccess2getEventList()±
+®
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «(8 
+gertaerajava.util.Collection"__id*
+
+%3java.util.CollectionÇ
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¬ ¬(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager¿¼
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¬ ¬(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"Œ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java­ ­("
+ 
+gertaerajava.util.CollectionB(&
+$businessLogic.BLFacadeImplementation

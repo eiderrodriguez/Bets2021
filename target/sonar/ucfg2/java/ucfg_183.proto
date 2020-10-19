@@ -1,0 +1,54 @@
+
+ObusinessLogic.BLFacadeImplementation#getDiruMugimenduakByNan(I)Ljava/util/List;f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java√ √(4"1*ù
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≈ ≈(«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≈ ≈(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager«ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≈ ≈(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∆) ∆(2
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÜÉ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∆) ∆(O
+%3java.util.List"@dataAccess.DataAccess#getDiruMugimenduakByNan(I)Ljava/util/List;*
+
+%2dataAccess.DataAccess*
+""2getDiruMugimenduakByNan(I)¨
+©
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∆ ∆(P!
+diruMugimenduakjava.util.List"__id*
+
+%3java.util.List«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerøº
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"ç
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java» »(#
+!
+diruMugimenduakjava.util.List:
+""B(&
+$businessLogic.BLFacadeImplementation

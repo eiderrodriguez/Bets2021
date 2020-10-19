@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Login.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">Login.java</span></div><h1>Login.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+import businessLogic.BLFacade;
+import domain.Administratzailea;
+import domain.PertsonaErregistratua;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+
+public class Login extends JFrame {
+
+	
+	static JTextField nanZb;
+	private JTextField nanL;
+	private JPasswordField pasahitz;
+	private JButton btnLogin;
+	private JRadioButton rdbtnEuskara;
+	private JRadioButton rdbtnEnglish;
+	private JRadioButton rdbtnCastellano;
+<span class="nc" id="L33">	private ButtonGroup fareButtonGroup = new ButtonGroup();</span>
+	private JLabel lblSartuZureNan;
+	private JLabel lblSartuZureNan_1;
+	private JLabel lblPasahitza;
+	private JButton btnKuotakIkusi;
+	private JButton erregistratu;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L44">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L47">					Login window = new Login();</span>
+<span class="nc" id="L48">					window.setVisible(true);</span>
+<span class="nc" id="L49">				} catch (Exception e) {</span>
+<span class="nc" id="L50">					e.printStackTrace();</span>
+<span class="nc" id="L51">				}</span>
+<span class="nc" id="L52">			}</span>
+		});
+<span class="nc" id="L54">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L59">	public Login() {</span>
+<span class="nc" id="L60">		initialize();</span>
+<span class="nc" id="L61">	}</span>
+	
+	
+
+	//Ziurtatzeko zenbakia dela funtzio laguntzailea sortu dut (data zuzena dela ziurtatzeko).
+	private boolean isNumeric(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L69">			Integer.parseInt(hitza);</span>
+<span class="nc" id="L70">			emaitza = true;</span>
+<span class="nc" id="L71">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L72">			emaitza = false;</span>
+<span class="nc" id="L73">		}</span>
+<span class="nc" id="L74">		return emaitza;</span>
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		
+<span class="nc" id="L82">		setBounds(100, 100, 448, 325);</span>
+<span class="nc" id="L83">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L84">		getContentPane().setLayout(null);</span>
+		
+<span class="nc" id="L86">		nanZb = new JTextField();</span>
+<span class="nc" id="L87">		nanZb.setBounds(184, 61, 156, 19);</span>
+<span class="nc" id="L88">		getContentPane().add(nanZb);</span>
+<span class="nc" id="L89">		nanZb.setColumns(10);</span>
+		
+<span class="nc" id="L91">		lblSartuZureNan = new JLabel(&quot;ID number:&quot;);</span>
+<span class="nc" id="L92">		lblSartuZureNan.setBounds(69, 63, 131, 17);</span>
+<span class="nc" id="L93">		getContentPane().add(lblSartuZureNan);</span>
+		
+<span class="nc" id="L95">		lblSartuZureNan_1 = new JLabel(&quot;ID character:&quot;);</span>
+<span class="nc" id="L96">		lblSartuZureNan_1.setBounds(69, 95, 131, 14);</span>
+<span class="nc" id="L97">		getContentPane().add(lblSartuZureNan_1);</span>
+		
+<span class="nc" id="L99">		nanL = new JTextField();</span>
+<span class="nc" id="L100">		nanL.setBounds(184, 92, 30, 20);</span>
+<span class="nc" id="L101">		getContentPane().add(nanL);</span>
+<span class="nc" id="L102">		nanL.setColumns(10);</span>
+		
+<span class="nc" id="L104">		lblPasahitza = new JLabel(&quot;Password:&quot;);</span>
+<span class="nc" id="L105">		lblPasahitza.setBounds(69, 127, 131, 14);</span>
+<span class="nc" id="L106">		getContentPane().add(lblPasahitza);</span>
+		
+<span class="nc" id="L108">		pasahitz = new JPasswordField();</span>
+<span class="nc" id="L109">		pasahitz.setBounds(184, 124, 156, 20);</span>
+<span class="nc" id="L110">		getContentPane().add(pasahitz);</span>
+		
+<span class="nc" id="L112">		btnLogin = new JButton(&quot;Login&quot;);</span>
+<span class="nc" id="L113">		btnLogin.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				
+				// Ziurtatu NAN zenbakia egokia dela:
+<span class="nc bnc" id="L117" title="All 8 branches missed.">				if (isNumeric(nanZb.getText()) &amp;&amp; nanZb.getText().length()==8 &amp;&amp; nanL.getText().length()==1 &amp;&amp; !isNumeric(nanL.getText())) {</span>
+<span class="nc" id="L118">					int nanZenbakia = Integer.parseInt(nanZb.getText());</span>
+					
+<span class="nc" id="L120">					String pass = new String(pasahitz.getPassword());</span>
+					
+					// Sortu BLFacade
+<span class="nc" id="L123">					BLFacade bl = MainGUI.getBusinessLogic();</span>
+	
+					boolean lBai;
+					try {
+<span class="nc" id="L127">						lBai = bl.login(nanZenbakia, pass);</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">						if (bl.getUserByNan(nanZenbakia) instanceof PertsonaErregistratua) {</span>
+<span class="nc" id="L129">							setVisible(false);</span>
+<span class="nc" id="L130">							UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L131">							up.setVisible(true);</span>
+<span class="nc" id="L132">							dispose(); </span>
+
+<span class="nc bnc" id="L134" title="All 2 branches missed.">						} else if (bl.getUserByNan(nanZenbakia) instanceof Administratzailea){</span>
+<span class="nc" id="L135">							setVisible(false);</span>
+<span class="nc" id="L136">							AdminPantaila ap = new AdminPantaila();</span>
+<span class="nc" id="L137">							ap.setVisible(true);</span>
+<span class="nc" id="L138">							dispose();					</span>
+						}
+<span class="nc" id="L140">					} catch (Exception e) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L142">						e.printStackTrace();</span>
+<span class="nc" id="L143">					}</span>
+					 
+					
+					
+<span class="nc" id="L147">				} else {</span>
+<span class="nc" id="L148">					JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NanWrong&quot;));</span>
+				}
+				
+				
+<span class="nc" id="L152">			}</span>
+		});
+<span class="nc" id="L154">		btnLogin.setBounds(155, 183, 131, 23);</span>
+<span class="nc" id="L155">		getContentPane().add(btnLogin);</span>
+		
+<span class="nc" id="L157">		erregistratu = new JButton(&quot;Register&quot;);</span>
+<span class="nc" id="L158">		erregistratu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L160">				setVisible(false);</span>
+<span class="nc" id="L161">				Erregistratu err = new Erregistratu();</span>
+<span class="nc" id="L162">				err.setVisible(true);</span>
+<span class="nc" id="L163">				dispose();</span>
+<span class="nc" id="L164">			}</span>
+		});
+<span class="nc" id="L166">		erregistratu.setBounds(272, 230, 139, 23);</span>
+<span class="nc" id="L167">		getContentPane().add(erregistratu);</span>
+		
+<span class="nc" id="L169">		btnKuotakIkusi = new JButton(&quot;See fees&quot;);</span>
+<span class="nc" id="L170">		btnKuotakIkusi.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L172">				setVisible(false);</span>
+<span class="nc" id="L173">				KuotakIkusi kI = new KuotakIkusi();</span>
+<span class="nc" id="L174">				kI.setVisible(true);</span>
+<span class="nc" id="L175">				dispose();</span>
+<span class="nc" id="L176">			}</span>
+		});
+<span class="nc" id="L178">		btnKuotakIkusi.setBounds(49, 230, 115, 23);</span>
+<span class="nc" id="L179">		getContentPane().add(btnKuotakIkusi);</span>
+		
+		
+		// HIZKUNTZA ALDATZEKO:
+<span class="nc" id="L183">		rdbtnEuskara = new JRadioButton(&quot;Euskara&quot;);</span>
+<span class="nc" id="L184">		rdbtnEuskara.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L186">				Locale.setDefault(new Locale(&quot;eus&quot;));</span>
+<span class="nc" id="L187">				System.out.println(&quot;Locale: &quot; + Locale.getDefault());</span>
+<span class="nc" id="L188">				berrizendatu();</span>
+<span class="nc" id="L189">			}</span>
+		});
+<span class="nc" id="L191">		rdbtnEuskara.setBounds(93, 9, 89, 25);</span>
+<span class="nc" id="L192">		fareButtonGroup.add(rdbtnEuskara);</span>
+<span class="nc" id="L193">		getContentPane().add(rdbtnEuskara);</span>
+		
+<span class="nc" id="L195">		rdbtnEnglish = new JRadioButton(&quot;English&quot;);</span>
+<span class="nc" id="L196">		rdbtnEnglish.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L198">				Locale.setDefault(new Locale(&quot;en&quot;));</span>
+<span class="nc" id="L199">				System.out.println(&quot;Locale: &quot; + Locale.getDefault());</span>
+<span class="nc" id="L200">				berrizendatu();</span>
+<span class="nc" id="L201">			}</span>
+		});
+<span class="nc" id="L203">		rdbtnEnglish.setBounds(8, 9, 81, 25);</span>
+<span class="nc" id="L204">		fareButtonGroup.add(rdbtnEnglish);</span>
+<span class="nc" id="L205">		getContentPane().add(rdbtnEnglish);</span>
+		
+<span class="nc" id="L207">		rdbtnCastellano = new JRadioButton(&quot;Castellano&quot;);</span>
+<span class="nc" id="L208">		rdbtnCastellano.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L210">				Locale.setDefault(new Locale(&quot;es&quot;));</span>
+<span class="nc" id="L211">				System.out.println(&quot;Locale: &quot; + Locale.getDefault());</span>
+<span class="nc" id="L212">				berrizendatu();</span>
+<span class="nc" id="L213">			}</span>
+		});
+<span class="nc" id="L215">		rdbtnCastellano.setBounds(186, 9, 127, 25);</span>
+<span class="nc" id="L216">		fareButtonGroup.add(rdbtnCastellano);</span>
+<span class="nc" id="L217">		getContentPane().add(rdbtnCastellano);</span>
+				
+		
+<span class="nc" id="L220">	}</span>
+	private void berrizendatu() {
+<span class="nc" id="L222">		lblSartuZureNan.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NanNumber&quot;));</span>
+<span class="nc" id="L223">		lblSartuZureNan_1.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NanChar&quot;));</span>
+<span class="nc" id="L224">		lblPasahitza.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Password&quot;));</span>
+<span class="nc" id="L225">		btnLogin.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Login&quot;));</span>
+<span class="nc" id="L226">		btnKuotakIkusi.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;SeeFees&quot;));</span>
+<span class="nc" id="L227">		erregistratu.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Register&quot;));</span>
+<span class="nc" id="L228">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PertsonaErregistratua.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">domain</a> &gt; <span class="el_source">PertsonaErregistratua.java</span></div><h1>PertsonaErregistratua.java</h1><pre class="source lang-java linenums">package domain;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Vector;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlIDREF;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@Entity
+public class PertsonaErregistratua extends Pertsona implements Serializable{
+	
+	private float irabaziak;
+	private float diruKantitatea;
+	private Date jaiotzeData;
+<span class="nc" id="L22">	@XmlIDREF</span>
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private Vector&lt;Apustua&gt; apustuak=new Vector&lt;Apustua&gt;();
+
+	public PertsonaErregistratua(String iz, String ab1, String ab2, String email,int nZ, String nL, String pasahitz, float dirua, Date jaioD) {
+<span class="nc" id="L27">		super(iz, ab1, ab2, email, nZ, nL, pasahitz);</span>
+<span class="nc" id="L28">		this.diruKantitatea = dirua;</span>
+<span class="nc" id="L29">		this.jaiotzeData = jaioD;</span>
+<span class="nc" id="L30">		this.irabaziak = 0;</span>
+<span class="nc" id="L31">	}</span>
+	
+	public PertsonaErregistratua() {
+<span class="nc" id="L34">		super();</span>
+<span class="nc" id="L35">	}</span>
+
+	// Getterrak eta setterrak:
+	public float getDiruKantitatea() {
+<span class="nc" id="L39">		return diruKantitatea;</span>
+	}
+
+	public void setDiruKantitatea(float dirua) {
+<span class="nc" id="L43">		this.diruKantitatea = dirua;</span>
+<span class="nc" id="L44">	}</span>
+
+	public Date getJaiotzeData() {
+<span class="nc" id="L47">		return jaiotzeData;</span>
+	}
+
+	public void setJaiotzeData(Date jaiotzeData) {
+<span class="nc" id="L51">		this.jaiotzeData = jaiotzeData;</span>
+<span class="nc" id="L52">	}</span>
+	
+	public float getIrabaziak() {
+<span class="nc" id="L55">		return irabaziak;</span>
+	}
+	
+	public void setIrabaziak(float irabaziak) {
+<span class="nc" id="L59">		this.irabaziak = irabaziak;</span>
+<span class="nc" id="L60">	}</span>
+	
+	public Vector&lt;Apustua&gt; getApustuak(){
+<span class="nc" id="L63">		return apustuak;</span>
+	}
+	
+	//BEHARREZKO METODOAK:
+	public float addDirua(float dirua) {
+<span class="nc" id="L68">		return this.diruKantitatea = this.diruKantitatea + dirua;</span>
+	}
+	
+	public Apustua addApustua(Apustua a) {
+<span class="nc" id="L72">		apustuak.add(a);</span>
+<span class="nc" id="L73">		return a;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="nc" id="L78">		return this.getIzena() +&quot; &quot;+ this.getAbizena1() +&quot; &quot;+ this.getAbizena2(); </span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

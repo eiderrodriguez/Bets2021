@@ -1,0 +1,96 @@
+
+SbusinessLogic.BLFacadeImplementation#apustuaEgin(Ljava/util/Date;FLdomain/Kuota;I)Zf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÌ Ì("startingBlock*¤
+startingBlockf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÌ Ì(T¶
+³
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaË Ë(
+%6"
+__annotate*
+javax.jws.WebMethod*
+
+
+apustuDatajava.util.DateŸ
+œ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÌ! Ì(+
+
+apustuDatajava.util.Date"__annotation*
+
+%6¯
+¬
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaË Ë(
+%7"
+__annotate*
+javax.jws.WebMethod*
+
+kuotadomain.Kuota˜
+•
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÌE Ì(J
+kuotadomain.Kuota"__annotation*
+
+%7*
+1*Ã
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÎ Î(Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÎ Î(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÇÄ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÎ Î(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÏ Ï(
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager×Ô
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÏ Ï(I
+%3boolean"DdataAccess.DataAccess#apustuaEgin(Ljava/util/Date;FLdomain/Kuota;I)Z*
+
+%2dataAccess.DataAccess*
+
+
+apustuDatajava.util.Date*
+""*
+
+kuotadomain.Kuota*
+""2-apustuaEgin(Ljava/util/Date;FLdomain/Kuota;I)Ÿ
+œ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÏ Ï(J
+apustujava.lang.Boolean"__id*
+
+%3booleanÇ
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÐ Ð(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager¿¼
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÐ Ð(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"p
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaÑ Ñ(
+"":
+
+apustuDatajava.util.Date:
+"":
+kuotadomain.Kuota:
+""B(&
+$businessLogic.BLFacadeImplementation

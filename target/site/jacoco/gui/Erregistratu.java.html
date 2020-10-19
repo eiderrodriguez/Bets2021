@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Erregistratu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">Erregistratu.java</span></div><h1>Erregistratu.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import businessLogic.BLFacade;
+import domain.Pertsona;
+
+import javax.swing.JPasswordField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
+import java.awt.event.ActionEvent;
+
+public class Erregistratu extends JFrame {
+
+	private JTextField izen;
+	private JTextField abiz1;
+	private JTextField abiz2;
+	private JTextField email;
+	private JTextField urte;
+	private JTextField nanZ;
+	private JTextField nanL;
+	private JPasswordField pasahitz1;
+	private JPasswordField pasahitz2;
+	private JTextField egun;
+	private JComboBox&lt;String&gt; hilabeteComboBox;
+<span class="nc" id="L37">	private DefaultComboBoxModel&lt;String&gt; hilabeteak = new DefaultComboBoxModel&lt;String&gt;();</span>
+<span class="nc" id="L38">	private JLabel lblIzena = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Name&quot;));</span>
+<span class="nc" id="L39">	private JLabel lblAbizena = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;FirstSurname&quot;));</span>
+<span class="nc" id="L40">	private JLabel lblAbizena2 = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;SecondSurname&quot;));</span>
+<span class="nc" id="L41">	private JLabel lblEmaila = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Email&quot;));</span>
+<span class="nc" id="L42">	private JLabel lblJaiotzedata = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Birthday&quot;));</span>
+<span class="nc" id="L43">	private JLabel lblNan = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Nan&quot;));</span>
+<span class="nc" id="L44">	private JLabel lblPasahitza = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Password&quot;));</span>
+<span class="nc" id="L45">	private JLabel lblPasahitzaErrepikatu = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;RepeatPassword&quot;));</span>
+<span class="nc" id="L46">	private JButton btnErregistratu = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Register&quot;));</span>
+	private JTextField diruK;
+<span class="nc" id="L48">	private JLabel diruKantitatea = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;HowMuchMoney&quot;));</span>
+<span class="nc" id="L49">	private JButton btnAtzera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Back&quot;));</span>
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L55">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L58">					Erregistratu window = new Erregistratu();</span>
+<span class="nc" id="L59">					window.setVisible(true);</span>
+<span class="nc" id="L60">				} catch (Exception e) {</span>
+<span class="nc" id="L61">					e.printStackTrace();</span>
+<span class="nc" id="L62">				}</span>
+<span class="nc" id="L63">			}</span>
+		});
+<span class="nc" id="L65">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L70">	public Erregistratu() {</span>
+<span class="nc" id="L71">		initialize();</span>
+<span class="nc" id="L72">	}</span>
+	
+	private static Date newDate(int year,int month,int day) {
+
+<span class="nc" id="L76">	     Calendar calendar = Calendar.getInstance();</span>
+<span class="nc" id="L77">	     calendar.set(year, month, day,0,0,0);</span>
+<span class="nc" id="L78">	     calendar.set(Calendar.MILLISECOND, 0);</span>
+
+<span class="nc" id="L80">	     return calendar.getTime();</span>
+	}
+
+	//Ziurtatzeko zenbakia dela funtzio laguntzailea sortu dut (data zuzena dela ziurtatzeko).
+	private boolean isNumeric(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L87">			Integer.parseInt(hitza);</span>
+<span class="nc" id="L88">			emaitza = true;</span>
+<span class="nc" id="L89">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L90">			emaitza = false;</span>
+<span class="nc" id="L91">		}</span>
+<span class="nc" id="L92">		return emaitza;</span>
+	}
+	
+	private boolean isNumericF(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L98">			Float.parseFloat(hitza);</span>
+<span class="nc" id="L99">			emaitza = true;</span>
+<span class="nc" id="L100">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L101">			emaitza = false;</span>
+<span class="nc" id="L102">		}</span>
+<span class="nc" id="L103">		return emaitza;</span>
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="nc" id="L110">		setBounds(100, 100, 454, 415);</span>
+<span class="nc" id="L111">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L112">		getContentPane().setLayout(null);</span>
+		
+<span class="nc" id="L114">		lblIzena.setBounds(42, 38, 70, 14);</span>
+<span class="nc" id="L115">		getContentPane().add(lblIzena);</span>
+		
+<span class="nc" id="L117">		lblAbizena.setBounds(42, 63, 145, 14);</span>
+<span class="nc" id="L118">		getContentPane().add(lblAbizena);</span>
+		
+<span class="nc" id="L120">		lblAbizena2.setBounds(42, 88, 145, 14);</span>
+<span class="nc" id="L121">		getContentPane().add(lblAbizena2);</span>
+		
+<span class="nc" id="L123">		lblEmaila.setBounds(42, 113, 46, 14);</span>
+<span class="nc" id="L124">		getContentPane().add(lblEmaila);</span>
+		
+<span class="nc" id="L126">		lblJaiotzedata.setBounds(42, 138, 94, 14);</span>
+<span class="nc" id="L127">		getContentPane().add(lblJaiotzedata);</span>
+		
+<span class="nc" id="L129">		lblNan.setBounds(42, 163, 46, 14);</span>
+<span class="nc" id="L130">		getContentPane().add(lblNan);</span>
+		
+<span class="nc" id="L132">		lblPasahitza.setBounds(42, 216, 82, 14);</span>
+<span class="nc" id="L133">		getContentPane().add(lblPasahitza);</span>
+		
+<span class="nc" id="L135">		izen = new JTextField();</span>
+<span class="nc" id="L136">		izen.setBounds(199, 35, 86, 20);</span>
+<span class="nc" id="L137">		getContentPane().add(izen);</span>
+<span class="nc" id="L138">		izen.setColumns(10);</span>
+		
+<span class="nc" id="L140">		abiz1 = new JTextField();</span>
+<span class="nc" id="L141">		abiz1.setBounds(199, 60, 86, 20);</span>
+<span class="nc" id="L142">		getContentPane().add(abiz1);</span>
+<span class="nc" id="L143">		abiz1.setColumns(10);</span>
+		
+<span class="nc" id="L145">		abiz2 = new JTextField();</span>
+<span class="nc" id="L146">		abiz2.setBounds(199, 85, 86, 20);</span>
+<span class="nc" id="L147">		getContentPane().add(abiz2);</span>
+<span class="nc" id="L148">		abiz2.setColumns(10);</span>
+		
+<span class="nc" id="L150">		email = new JTextField();</span>
+<span class="nc" id="L151">		email.setBounds(199, 110, 86, 20);</span>
+<span class="nc" id="L152">		getContentPane().add(email);</span>
+<span class="nc" id="L153">		email.setColumns(10);</span>
+		
+<span class="nc" id="L155">		urte = new JTextField();</span>
+<span class="nc" id="L156">		urte.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Year&quot;));</span>
+<span class="nc" id="L157">		urte.setBounds(199, 135, 46, 20);</span>
+<span class="nc" id="L158">		getContentPane().add(urte);</span>
+<span class="nc" id="L159">		urte.setColumns(10);</span>
+		
+<span class="nc" id="L161">		nanZ = new JTextField();</span>
+<span class="nc" id="L162">		nanZ.setBounds(199, 160, 86, 20);</span>
+<span class="nc" id="L163">		getContentPane().add(nanZ);</span>
+<span class="nc" id="L164">		nanZ.setColumns(10);</span>
+		
+<span class="nc" id="L166">		nanL = new JTextField();</span>
+<span class="nc" id="L167">		nanL.setBounds(300, 160, 25, 20);</span>
+<span class="nc" id="L168">		getContentPane().add(nanL);</span>
+<span class="nc" id="L169">		nanL.setColumns(10);</span>
+		
+<span class="nc" id="L171">		pasahitz1 = new JPasswordField();</span>
+<span class="nc" id="L172">		pasahitz1.setBounds(199, 213, 86, 20);</span>
+<span class="nc" id="L173">		getContentPane().add(pasahitz1);</span>
+		
+<span class="nc" id="L175">		lblPasahitzaErrepikatu.setBounds(42, 246, 161, 14);</span>
+<span class="nc" id="L176">		getContentPane().add(lblPasahitzaErrepikatu);</span>
+		
+<span class="nc" id="L178">		pasahitz2 = new JPasswordField();</span>
+<span class="nc" id="L179">		pasahitz2.setBounds(199, 246, 86, 20);</span>
+<span class="nc" id="L180">		getContentPane().add(pasahitz2);</span>
+		
+<span class="nc" id="L182">		btnErregistratu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L184">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+
+<span class="nc bnc" id="L186" title="All 14 branches missed.">				if (!nanZ.getText().isEmpty() &amp;&amp; !izen.getText().isEmpty() &amp;&amp; !urte.getText().isEmpty() &amp;&amp; !egun.getText().isEmpty() &amp;&amp; !diruK.getText().isEmpty() &amp;&amp; pasahitz1.getPassword().length!=0 &amp;&amp; pasahitz2.getPassword().length!=0) {</span>
+<span class="nc bnc" id="L187" title="All 10 branches missed.">					if (isNumeric(urte.getText()) &amp;&amp; nanZ.getText().length()==8 &amp;&amp; isNumeric(egun.getText()) &amp;&amp; Integer.parseInt(egun.getText())&gt;0 &amp;&amp; Integer.parseInt(egun.getText())&lt;=31) {</span>
+<span class="nc" id="L188">						java.util.Date data = newDate(Integer.parseInt(urte.getText()),hilabeteComboBox.getSelectedIndex(),Integer.parseInt(egun.getText()));</span>
+
+<span class="nc" id="L190">						int adina = 2020-Integer.parseInt(urte.getText());</span>
+<span class="nc bnc" id="L191" title="All 6 branches missed.">						if (adina&gt;=18 &amp;&amp; isNumericF(diruK.getText()) &amp;&amp; Float.parseFloat(diruK.getText())&gt;=0) {</span>
+<span class="nc" id="L192">							String pas1 = new String(pasahitz1.getPassword());</span>
+<span class="nc" id="L193">							String pas2 = new String(pasahitz2.getPassword());</span>
+<span class="nc" id="L194">							Boolean erBai = bl.pertsonaErregistratu(izen.getText(), abiz1.getText(), abiz2.getText(), email.getText(), Float.parseFloat(diruK.getText()), data, Integer.parseInt(nanZ.getText()), nanL.getText(), pas1, pas2);</span>
+							//Ziurtatzeko ongi erregistratu dela:
+<span class="nc bnc" id="L196" title="All 2 branches missed.">							if (erBai) {</span>
+<span class="nc" id="L197">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;RegisterCorrect&quot;));</span>
+<span class="nc" id="L198">								System.out.println(izen.getText() + &quot; erabiltzailea erregistratu da nan zenbaki honekin &quot; + nanZ.getText() + &quot; &quot; + nanL.getText());</span>
+
+								//Login-era itzultzeko:
+<span class="nc" id="L201">								setVisible(false);</span>
+<span class="nc" id="L202">								Login log = new Login();</span>
+<span class="nc" id="L203">								log.setVisible(true);</span>
+<span class="nc" id="L204">								dispose();</span>
+							}
+
+
+<span class="nc" id="L208">						} else {</span>
+<span class="nc bnc" id="L209" title="All 2 branches missed.">							if(adina&lt;18) {</span>
+<span class="nc" id="L210">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;IsMinor&quot;));</span>
+							} else {
+<span class="nc" id="L212">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;MoneyNumber&quot;));</span>
+							}
+
+						}
+<span class="nc" id="L216">					} else {</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">						if (nanZ.getText().length()!=8) {</span>
+<span class="nc" id="L218">							JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoNanNumber&quot;));</span>
+						} else {
+<span class="nc" id="L220">							JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoYearDay&quot;));</span>
+						}
+					}
+									
+				} else {
+<span class="nc bnc" id="L225" title="All 2 branches missed.">					if (nanZ.getText().isEmpty()) {</span>
+<span class="nc" id="L226">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterNan&quot;));</span>
+<span class="nc bnc" id="L227" title="All 2 branches missed.">					} else if (izen.getText().isEmpty()) {</span>
+<span class="nc" id="L228">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterName&quot;));</span>
+<span class="nc bnc" id="L229" title="All 2 branches missed.">					} else if (urte.getText().isEmpty()) {</span>
+<span class="nc" id="L230">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterYear&quot;));</span>
+<span class="nc bnc" id="L231" title="All 2 branches missed.">					} else if (egun.getText().isEmpty()) {</span>
+<span class="nc" id="L232">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterDay&quot;));</span>
+<span class="nc bnc" id="L233" title="All 2 branches missed.">					} else if (diruK.getText().isEmpty()) {</span>
+<span class="nc" id="L234">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterMoney&quot;));</span>
+<span class="nc bnc" id="L235" title="All 4 branches missed.">					} else if (pasahitz1.getPassword().length==0 || pasahitz2.getPassword().length==0) {</span>
+<span class="nc" id="L236">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Enter2Pass&quot;));</span>
+					}
+				}
+					
+<span class="nc" id="L240">			}</span>
+		});
+<span class="nc" id="L242">		btnErregistratu.setBounds(300, 289, 113, 23);</span>
+<span class="nc" id="L243">		getContentPane().add(btnErregistratu);</span>
+		
+<span class="nc" id="L245">		hilabeteComboBox = new JComboBox&lt;String&gt;();</span>
+<span class="nc" id="L246">		hilabeteComboBox.setBounds(263, 135, 72, 20);</span>
+<span class="nc" id="L247">		getContentPane().add(hilabeteComboBox);</span>
+<span class="nc" id="L248">		hilabeteComboBox.setModel(hilabeteak);</span>
+		
+<span class="nc" id="L250">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;January&quot;));</span>
+<span class="nc" id="L251">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;February&quot;));</span>
+<span class="nc" id="L252">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;March&quot;));</span>
+<span class="nc" id="L253">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;April&quot;));</span>
+<span class="nc" id="L254">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;May&quot;));</span>
+<span class="nc" id="L255">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;June&quot;));</span>
+<span class="nc" id="L256">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;July&quot;));</span>
+<span class="nc" id="L257">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;August&quot;));</span>
+<span class="nc" id="L258">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;September&quot;));</span>
+<span class="nc" id="L259">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;October&quot;));</span>
+<span class="nc" id="L260">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;November&quot;));</span>
+<span class="nc" id="L261">		hilabeteak.addElement(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;December&quot;));</span>
+<span class="nc" id="L262">		hilabeteComboBox.setSelectedIndex(0);</span>
+		
+<span class="nc" id="L264">		egun = new JTextField();</span>
+<span class="nc" id="L265">		egun.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Day&quot;));</span>
+<span class="nc" id="L266">		egun.setBounds(356, 135, 46, 20);</span>
+<span class="nc" id="L267">		getContentPane().add(egun);</span>
+<span class="nc" id="L268">		egun.setColumns(10);</span>
+		
+<span class="nc" id="L270">		diruKantitatea.setBounds(42, 193, 154, 14);</span>
+<span class="nc" id="L271">		getContentPane().add(diruKantitatea);</span>
+		
+<span class="nc" id="L273">		diruK = new JTextField();</span>
+<span class="nc" id="L274">		diruK.setBounds(199, 187, 126, 20);</span>
+<span class="nc" id="L275">		getContentPane().add(diruK);</span>
+<span class="nc" id="L276">		diruK.setColumns(10);</span>
+		
+<span class="nc" id="L278">		btnAtzera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L280">				setVisible(false);</span>
+<span class="nc" id="L281">				Login l = new Login();</span>
+<span class="nc" id="L282">				l.setVisible(true);</span>
+<span class="nc" id="L283">				dispose();</span>
+<span class="nc" id="L284">			}</span>
+		});
+<span class="nc" id="L286">		btnAtzera.setBounds(300, 320, 113, 23);</span>
+<span class="nc" id="L287">		getContentPane().add(btnAtzera);</span>
+		
+	
+		
+<span class="nc" id="L291">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

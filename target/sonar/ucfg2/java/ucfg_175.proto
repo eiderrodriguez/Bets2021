@@ -1,0 +1,54 @@
+
+[businessLogic.BLFacadeImplementation#getErregistratuaByNan(I)Ldomain/PertsonaErregistratua;d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javay y(3"1*µ
+1d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java{ {(≈
+¬
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java{ {(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager≈¬
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java{ {(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)≈
+¬
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java| |('
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerúô
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java| |(B"
+%3domain.PertsonaErregistratua"LdataAccess.DataAccess#getErregistratuaByNan(I)Ldomain/PertsonaErregistratua;*
+
+%2dataAccess.DataAccess*
+""2getErregistratuaByNan(I)∫
+∑
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java| |(C#
+perdomain.PertsonaErregistratua"__id*$
+"
+%3domain.PertsonaErregistratua≈
+¬
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java} }(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerΩ∫
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java} }(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"ç
+d
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java~ ~(%
+#
+perdomain.PertsonaErregistratua:
+""B(&
+$businessLogic.BLFacadeImplementation

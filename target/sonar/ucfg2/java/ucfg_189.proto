@@ -1,0 +1,72 @@
+
+WbusinessLogic.BLFacadeImplementation#getApustuakByEvent(Ldomain/Event;)Ljava/util/List;f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaö ö(("startingBlock*Ã
+startingBlockf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaö( ö(2¬
+©
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaõ õ(
+%6"
+__annotate*
+javax.jws.WebMethod*
+
+evdomain.Event•
+’
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaö/ ö(1
+evdomain.Event"__annotation*
+
+%6*
+1*­
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaø ø(Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaø ø(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÇÄ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaø ø(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)Ç
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaù ù($
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager¤¡
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaù ù(;
+%3java.util.List"HdataAccess.DataAccess#getApustuakByEvent(Ldomain/Event;)Ljava/util/List;*
+
+%2dataAccess.DataAccess*
+
+evdomain.Event2"getApustuakByEvent(Ldomain/Event;)¥
+¢
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaù ù(<
+apustuakjava.util.List"__id*
+
+%3java.util.ListÇ
+Ä
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaú ú(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager¿¼
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaú ú(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"†
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaû û(
+
+apustuakjava.util.List:
+evdomain.EventB(&
+$businessLogic.BLFacadeImplementation

@@ -1,0 +1,84 @@
+
+VbusinessLogic.BLFacadeImplementation#kuotaGorde(Ljava/lang/String;FLdomain/Question;)Zf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java± ±("startingBlock*¥
+startingBlockf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java± ±(Qπ
+∂
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∞ ∞(
+%6"
+__annotate*
+javax.jws.WebMethod*!
+
+pronostikoajava.lang.String¢
+ü
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java±" ±(-
+pronostikoajava.lang.String"__annotation*
+
+%6¥
+±
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∞ ∞(
+%7"
+__annotate*
+javax.jws.WebMethod*
+
+galderadomain.Questionù
+ö
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java±I ±(P
+galderadomain.Question"__annotation*
+
+%7*
+1*ß
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≥ ≥(«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≥ ≥(
+%0dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager«ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java≥ ≥(
+
+%1void"dataAccess.DataAccess#open(Z)V*
+
+%0dataAccess.DataAccess*
+""2open(Z)«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¥ ¥(
+%2dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager›⁄
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¥ ¥(G
+%3boolean"GdataAccess.DataAccess#kuotaGorde(Ljava/lang/String;FLdomain/Question;)Z*
+
+%2dataAccess.DataAccess*!
+
+pronostikoajava.lang.String*
+""*
+
+galderadomain.Question20kuotaGorde(Ljava/lang/String;FLdomain/Question;)«
+ƒ
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaµ µ(
+%4dataAccess.DataAccess"__id*7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerøº
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaµ µ(
+
+%5void"dataAccess.DataAccess#close()V*
+
+%4dataAccess.DataAccess2close()"p
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java∂ ∂(
+"":
+pronostikoajava.lang.String:
+"":
+galderadomain.QuestionB(&
+$businessLogic.BLFacadeImplementation

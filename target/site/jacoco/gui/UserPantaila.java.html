@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserPantaila.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">UserPantaila.java</span></div><h1>UserPantaila.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
+import java.awt.event.ActionEvent;
+
+public class UserPantaila extends JFrame {
+
+	private JPanel contentPane;
+<span class="nc" id="L17">	private JButton btnSaioaItxi = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;LogOut&quot;));</span>
+<span class="nc" id="L18">	private JButton btnDiruaSartuAtera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;PutTakeMoney&quot;));</span>
+<span class="nc" id="L19">	private JButton btnMugimenduakIkusi = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;SeeMovements&quot;));</span>
+<span class="nc" id="L20">	private JButton btnNewButton = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;DeleteBet&quot;));</span>
+<span class="nc" id="L21">	private JButton gertaeraIkusi = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;SeeEvent&quot;));</span>
+<span class="nc" id="L22">	private JButton btnApustuaEgin = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Bet&quot;));</span>
+<span class="nc" id="L23">	private JButton btnErreplikatu = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Replicate&quot;));</span>
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L29">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L32">					UserPantaila frame = new UserPantaila();</span>
+<span class="nc" id="L33">					frame.setVisible(true);</span>
+<span class="nc" id="L34">				} catch (Exception e) {</span>
+<span class="nc" id="L35">					e.printStackTrace();</span>
+<span class="nc" id="L36">				}</span>
+<span class="nc" id="L37">			}</span>
+		});
+<span class="nc" id="L39">	}</span>
+	
+	/**
+	 * Create the frame.
+	 */
+<span class="nc" id="L44">	public UserPantaila() {</span>
+<span class="nc" id="L45">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L46">		setBounds(100, 100, 450, 300);</span>
+<span class="nc" id="L47">		contentPane = new JPanel();</span>
+<span class="nc" id="L48">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="nc" id="L49">		setContentPane(contentPane);</span>
+<span class="nc" id="L50">		contentPane.setLayout(null);</span>
+		
+<span class="nc" id="L52">		gertaeraIkusi.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L54">				setVisible(false);</span>
+<span class="nc" id="L55">				FindQuestionsGUI fq = new FindQuestionsGUI();</span>
+<span class="nc" id="L56">				fq.setVisible(true);</span>
+<span class="nc" id="L57">				dispose();</span>
+<span class="nc" id="L58">			}</span>
+		});
+<span class="nc" id="L60">		gertaeraIkusi.setBounds(42, 35, 173, 41);</span>
+<span class="nc" id="L61">		contentPane.add(gertaeraIkusi);</span>
+		
+<span class="nc" id="L63">		btnSaioaItxi.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L65">				setVisible(false);</span>
+<span class="nc" id="L66">				Login l = new Login();</span>
+<span class="nc" id="L67">				l.setVisible(true);</span>
+<span class="nc" id="L68">				dispose();</span>
+<span class="nc" id="L69">			}</span>
+		});
+<span class="nc" id="L71">		btnSaioaItxi.setBounds(298, 199, 115, 29);</span>
+<span class="nc" id="L72">		contentPane.add(btnSaioaItxi);</span>
+		
+<span class="nc" id="L74">		btnDiruaSartuAtera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L76">				setVisible(false);</span>
+<span class="nc" id="L77">				DiruaSartuAtera dsa = new DiruaSartuAtera();</span>
+<span class="nc" id="L78">				dsa.setVisible(true);</span>
+<span class="nc" id="L79">				dispose();</span>
+<span class="nc" id="L80">			}</span>
+		});
+<span class="nc" id="L82">		btnDiruaSartuAtera.setBounds(42, 86, 173, 41);</span>
+<span class="nc" id="L83">		contentPane.add(btnDiruaSartuAtera);</span>
+		
+<span class="nc" id="L85">		btnApustuaEgin.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L87">				setVisible(false);</span>
+<span class="nc" id="L88">				ApustuaEgin ae = new ApustuaEgin();</span>
+<span class="nc" id="L89">				ae.setVisible(true);</span>
+<span class="nc" id="L90">				dispose();</span>
+<span class="nc" id="L91">			}</span>
+		});
+<span class="nc" id="L93">		btnApustuaEgin.setBounds(42, 140, 173, 41);</span>
+<span class="nc" id="L94">		contentPane.add(btnApustuaEgin);</span>
+		
+<span class="nc" id="L96">		btnMugimenduakIkusi.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L98">				setVisible(false);</span>
+<span class="nc" id="L99">				Mugimenduak m = new Mugimenduak();</span>
+<span class="nc" id="L100">				m.setVisible(true);</span>
+<span class="nc" id="L101">				dispose();</span>
+<span class="nc" id="L102">			}</span>
+		});
+<span class="nc" id="L104">		btnMugimenduakIkusi.setBounds(229, 35, 173, 41);</span>
+<span class="nc" id="L105">		contentPane.add(btnMugimenduakIkusi);</span>
+		
+<span class="nc" id="L107">		btnNewButton.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L109">				setVisible(false);</span>
+<span class="nc" id="L110">				ApustuaEzabatu ae = new ApustuaEzabatu();</span>
+<span class="nc" id="L111">				ae.setVisible(true);</span>
+<span class="nc" id="L112">				dispose();</span>
+<span class="nc" id="L113">			}</span>
+		});
+<span class="nc" id="L115">		btnNewButton.setBounds(230, 87, 172, 38);</span>
+<span class="nc" id="L116">		contentPane.add(btnNewButton);</span>
+		
+<span class="nc" id="L118">		btnErreplikatu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L120">				setVisible(false);</span>
+<span class="nc" id="L121">				Erreplikatu e = new Erreplikatu();</span>
+<span class="nc" id="L122">				e.setVisible(true);</span>
+<span class="nc" id="L123">				dispose();</span>
+<span class="nc" id="L124">			}</span>
+		});
+<span class="nc" id="L126">		btnErreplikatu.setBounds(230, 140, 172, 40);</span>
+<span class="nc" id="L127">		contentPane.add(btnErreplikatu);</span>
+<span class="nc" id="L128">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

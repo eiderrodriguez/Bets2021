@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>KuotaSortu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">KuotaSortu.java</span></div><h1>KuotaSortu.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Rectangle;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.toedter.calendar.JCalendar;
+
+import businessLogic.BLFacade;
+import configuration.UtilDate;
+import domain.Event;
+import domain.Question;
+
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Vector;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+
+public class KuotaSortu extends JFrame {
+	
+	private JCalendar jCalendar;
+<span class="nc" id="L40">	private Calendar calendarMio = null;</span>
+	private JPanel contentPane;
+	private JTextField irabaziak;
+	private JTextField pronostikoa;
+<span class="nc" id="L44">	private JButton btnAtzera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Back&quot;));</span>
+<span class="nc" id="L45">	private JButton btnKuotaSortu = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;CreateFee&quot;));</span>
+<span class="nc" id="L46">	private JLabel lblHautatutakoGertaera = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;ChoosenEvent&quot;));</span>
+<span class="nc" id="L47">	private JLabel lblIrabaziak = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Fee&quot;));</span>
+<span class="nc" id="L48">	private JLabel lblPronostikoa = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Prediction&quot;));</span>
+<span class="nc" id="L49">	private JLabel lblHautatutakoGaldera = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;ChoosenQuestion&quot;));</span>
+	private JComboBox&lt;Question&gt; comboBoxGalderak;
+<span class="nc" id="L51">	private DefaultComboBoxModel&lt;Question&gt; galderak = new DefaultComboBoxModel&lt;Question&gt;();</span>
+	private JComboBox&lt;Event&gt; comboBoxGertaera;
+<span class="nc" id="L53">	private DefaultComboBoxModel&lt;Event&gt; gertaerak = new DefaultComboBoxModel&lt;Event&gt;();</span>
+
+	//Ziurtatzeko zenbakia dela funtzio laguntzailea sortu dut (data zuzena dela ziurtatzeko).
+	private boolean isNumeric(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L59">			Float.parseFloat(hitza);</span>
+<span class="nc" id="L60">			emaitza = true;</span>
+<span class="nc" id="L61">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L62">			emaitza = false;</span>
+<span class="nc" id="L63">		}</span>
+<span class="nc" id="L64">		return emaitza;</span>
+	}
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L71">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L74">					KuotaSortu window = new KuotaSortu();</span>
+<span class="nc" id="L75">					window.setVisible(true);</span>
+<span class="nc" id="L76">				} catch (Exception e) {</span>
+<span class="nc" id="L77">					e.printStackTrace();</span>
+<span class="nc" id="L78">				}</span>
+<span class="nc" id="L79">			}</span>
+		});
+<span class="nc" id="L81">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L86">	public KuotaSortu() {</span>
+<span class="nc" id="L87">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L88">		setBounds(100, 100, 483, 331);</span>
+<span class="nc" id="L89">		contentPane = new JPanel();</span>
+<span class="nc" id="L90">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="nc" id="L91">		setContentPane(contentPane);</span>
+<span class="nc" id="L92">		getContentPane().setLayout(null);</span>
+		
+<span class="nc" id="L94">		lblPronostikoa.setBounds(266, 139, 105, 14);</span>
+<span class="nc" id="L95">		getContentPane().add(lblPronostikoa);</span>
+		
+<span class="nc" id="L97">		lblIrabaziak.setBounds(266, 164, 83, 14);</span>
+<span class="nc" id="L98">		getContentPane().add(lblIrabaziak);</span>
+		
+<span class="nc" id="L100">		lblHautatutakoGertaera.setBounds(266, 11, 195, 14);</span>
+<span class="nc" id="L101">		getContentPane().add(lblHautatutakoGertaera);</span>
+		
+<span class="nc" id="L103">		jCalendar = new JCalendar();</span>
+<span class="nc" id="L104">		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));</span>
+<span class="nc" id="L105">		jCalendar.setBounds(10, 18, 225, 150);</span>
+<span class="nc" id="L106">		getContentPane().add(jCalendar);</span>
+		
+<span class="nc" id="L108">		btnKuotaSortu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L110">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+				
+<span class="nc" id="L112">				String pronostiko = pronostikoa.getText();</span>
+				
+<span class="nc bnc" id="L114" title="All 2 branches missed.">				if (isNumeric(irabaziak.getText())) {</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">					if (!pronostikoa.getText().isEmpty()) {</span>
+<span class="nc" id="L116">						Float irabazi = Float.parseFloat(irabaziak.getText());</span>
+						
+<span class="nc bnc" id="L118" title="All 2 branches missed.">						if (comboBoxGalderak.getSelectedItem()!=null) {</span>
+<span class="nc" id="L119">							Question galdera = (Question) comboBoxGalderak.getSelectedItem();</span>
+<span class="nc" id="L120">							boolean gorde = bl.kuotaGorde(pronostiko, irabazi, galdera);</span>
+<span class="nc" id="L121">							System.out.println(&quot;gorde kuorasortu: &quot;+gorde);</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">							if(!gorde) {</span>
+<span class="nc" id="L123">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;FeeExist&quot;));</span>
+							}
+<span class="nc" id="L125">						} else {</span>
+<span class="nc" id="L126">							JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;SelectAQuestion&quot;));</span>
+						}
+<span class="nc" id="L128">					} else {</span>
+<span class="nc" id="L129">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;EnterPrediction&quot;));</span>
+					}
+					
+					
+				} else {
+<span class="nc" id="L134">					JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;FeeNumber&quot;));</span>
+				}
+				
+				
+				
+				
+<span class="nc" id="L140">			}</span>
+		});
+<span class="nc" id="L142">		btnKuotaSortu.setBounds(179, 203, 134, 31);</span>
+<span class="nc" id="L143">		getContentPane().add(btnKuotaSortu);</span>
+		
+<span class="nc" id="L145">		btnAtzera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L147">				setVisible(false);</span>
+<span class="nc" id="L148">				AdminPantaila ap = new AdminPantaila();</span>
+<span class="nc" id="L149">				ap.setVisible(true);</span>
+<span class="nc" id="L150">				dispose();</span>
+<span class="nc" id="L151">			}</span>
+		});
+<span class="nc" id="L153">		btnAtzera.setBounds(179, 245, 134, 23);</span>
+<span class="nc" id="L154">		getContentPane().add(btnAtzera);</span>
+		
+<span class="nc" id="L156">		irabaziak = new JTextField();</span>
+<span class="nc" id="L157">		irabaziak.setBounds(353, 164, 86, 20);</span>
+<span class="nc" id="L158">		getContentPane().add(irabaziak);</span>
+<span class="nc" id="L159">		irabaziak.setColumns(10);</span>
+		
+<span class="nc" id="L161">		pronostikoa = new JTextField();</span>
+<span class="nc" id="L162">		pronostikoa.setBounds(353, 136, 86, 20);</span>
+<span class="nc" id="L163">		getContentPane().add(pronostikoa);</span>
+<span class="nc" id="L164">		pronostikoa.setColumns(10);</span>
+		
+<span class="nc" id="L166">		lblHautatutakoGaldera.setBounds(266, 73, 195, 14);</span>
+<span class="nc" id="L167">		getContentPane().add(lblHautatutakoGaldera);</span>
+		
+<span class="nc" id="L169">		comboBoxGertaera = new JComboBox&lt;Event&gt;();</span>
+<span class="nc" id="L170">		comboBoxGertaera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+				//comboBoxGalderan galdera posibleak sartzeko:	
+<span class="nc" id="L173">				comboBoxGalderak.removeAllItems();</span>
+<span class="nc bnc" id="L174" title="All 2 branches missed.">				if (comboBoxGertaera.getSelectedItem()!=null) {</span>
+<span class="nc" id="L175">					Event aukeratutakoGertaera = (Event) comboBoxGertaera.getSelectedItem();</span>
+<span class="nc" id="L176">					Vector&lt;Question&gt; questions = aukeratutakoGertaera.getQuestions();</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">					for (Question gal : questions) {</span>
+<span class="nc" id="L178">						galderak.addElement(gal);</span>
+<span class="nc" id="L179">					}</span>
+				}			
+<span class="nc" id="L181">			}</span>
+		});
+<span class="nc" id="L183">		comboBoxGertaera.setBounds(266, 36, 185, 26);</span>
+<span class="nc" id="L184">		contentPane.add(comboBoxGertaera);</span>
+<span class="nc" id="L185">		comboBoxGertaera.setModel(gertaerak);</span>
+		
+		
+<span class="nc" id="L188">		comboBoxGalderak = new JComboBox&lt;Question&gt;();</span>
+<span class="nc" id="L189">		comboBoxGalderak.setBounds(266, 95, 185, 26);</span>
+<span class="nc" id="L190">		contentPane.add(comboBoxGalderak);</span>
+<span class="nc" id="L191">		comboBoxGalderak.setModel(galderak);</span>
+		
+		//Calendar kontrolatzeko:
+<span class="nc" id="L194">		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {</span>
+			public void propertyChange(PropertyChangeEvent propertychangeevent) {
+//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
+//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
+<span class="nc bnc" id="L198" title="All 2 branches missed.">				if (propertychangeevent.getPropertyName().equals(&quot;locale&quot;)) {</span>
+<span class="nc" id="L199">					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());</span>
+<span class="nc bnc" id="L200" title="All 2 branches missed.">				} else if (propertychangeevent.getPropertyName().equals(&quot;calendar&quot;)) {</span>
+<span class="nc" id="L201">					calendarMio = (Calendar) propertychangeevent.getNewValue();</span>
+<span class="nc" id="L202">					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());</span>
+<span class="nc" id="L203">					jCalendar.setCalendar(calendarMio);</span>
+<span class="nc" id="L204">					Date firstDay = UtilDate.trim(new Date(jCalendar.getCalendar().getTime().getTime()));</span>
+
+					try {
+<span class="nc" id="L207">						BLFacade facade = MainGUI.getBusinessLogic();</span>
+
+<span class="nc" id="L209">						Vector&lt;domain.Event&gt; events = facade.getEvents(firstDay);</span>
+
+<span class="nc bnc" id="L211" title="All 2 branches missed.">						if (events.isEmpty())</span>
+<span class="nc" id="L212">							lblHautatutakoGertaera.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoEvents&quot;)</span>
+<span class="nc" id="L213">									+ &quot;: &quot; + dateformat1.format(calendarMio.getTime()));</span>
+						else
+<span class="nc" id="L215">							lblHautatutakoGertaera.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Events&quot;) + &quot;: &quot;</span>
+<span class="nc" id="L216">									+ dateformat1.format(calendarMio.getTime()));</span>
+<span class="nc" id="L217">						comboBoxGertaera.removeAllItems();</span>
+<span class="nc" id="L218">						System.out.println(&quot;Events &quot; + events);</span>
+
+<span class="nc bnc" id="L220" title="All 2 branches missed.">						for (domain.Event ev : events)</span>
+<span class="nc" id="L221">							gertaerak.addElement(ev);</span>
+<span class="nc" id="L222">						comboBoxGertaera.repaint();</span>
+
+<span class="nc bnc" id="L224" title="All 2 branches missed.">						if (events.size() == 0)</span>
+<span class="nc" id="L225">							btnKuotaSortu.setEnabled(false);</span>
+						else
+<span class="nc" id="L227">							btnKuotaSortu.setEnabled(true);</span>
+
+<span class="nc" id="L229">					} catch (Exception e1) {</span>
+
+<span class="nc" id="L231">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoEvents&quot;));</span>
+<span class="nc" id="L232">					}</span>
+
+				}
+<span class="nc" id="L235">				paintDaysWithEvents(jCalendar);</span>
+<span class="nc" id="L236">			}</span>
+		});
+		
+<span class="nc" id="L239">	}</span>
+		
+		//Margotzeko metodoa:
+		public static void paintDaysWithEvents(JCalendar jCalendar) {
+			// For each day in current month, it is checked if there are events, and in that
+			// case, the background color for that day is changed.
+
+<span class="nc" id="L246">			BLFacade facade = MainGUI.getBusinessLogic();</span>
+
+<span class="nc" id="L248">			Vector&lt;Date&gt; dates=facade.getEventsMonth(jCalendar.getDate());</span>
+				
+<span class="nc" id="L250">			Calendar calendar = jCalendar.getCalendar();</span>
+			
+<span class="nc" id="L252">			int month = calendar.get(Calendar.MONTH);</span>
+
+<span class="nc" id="L254">			calendar.set(Calendar.DAY_OF_MONTH, 1);</span>
+<span class="nc" id="L255">			int offset = calendar.get(Calendar.DAY_OF_WEEK);</span>
+
+<span class="nc bnc" id="L257" title="All 2 branches missed.">			if (Locale.getDefault().equals(new Locale(&quot;es&quot;)))</span>
+<span class="nc" id="L258">				offset += 4;</span>
+			else
+<span class="nc" id="L260">				offset += 5;</span>
+			
+			
+<span class="nc bnc" id="L263" title="All 2 branches missed.">		 	for (Date d:dates){</span>
+
+<span class="nc" id="L265">		 		calendar.setTime(d);</span>
+<span class="nc" id="L266">		 		System.out.println(d);</span>
+		 		
+
+				
+				// Obtain the component of the day in the panel of the DayChooser of the
+				// JCalendar.
+				// The component is located after the decorator buttons of &quot;Sun&quot;, &quot;Mon&quot;,... or
+				// &quot;Lun&quot;, &quot;Mar&quot;...,
+				// the empty days before day 1 of month, and all the days previous to each day.
+				// That number of components is calculated with &quot;offset&quot; and is different in
+				// English and Spanish
+//				    		  Component o=(Component) jCalendar.getDayChooser().getDayPanel().getComponent(i+offset);; 
+<span class="nc" id="L278">				Component o = (Component) jCalendar.getDayChooser().getDayPanel()</span>
+<span class="nc" id="L279">						.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);</span>
+<span class="nc" id="L280">				o.setBackground(Color.CYAN);</span>
+<span class="nc" id="L281">		 	}</span>
+		 	
+<span class="nc" id="L283">		 		calendar.set(Calendar.DAY_OF_MONTH, 1);</span>
+<span class="nc" id="L284">		 		calendar.set(Calendar.MONTH, month);</span>
+		 	
+<span class="nc" id="L286">		}</span>
+}		
+		
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

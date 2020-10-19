@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-10-10 10:29:08 #1 store] 
+Database '/Users/eiderrodriguez/Desktop/Eclipse/Bets2021/src/main/resources/bets20.temp' is opened by 724@MacBook-Pro-de-Eider.local
+
+[2020-10-10 10:29:08 #2 type] 
+Type domain.Pertsona is not enhanced.
+
+[2020-10-10 10:29:08 #3 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2020-10-10 10:29:08 #4 type] 
+Type domain.Question is not enhanced.
+
+[2020-10-10 10:29:08 #5 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-10-10 10:29:08 #6 type] 
+Type domain.Event is not enhanced.
+
+[2020-10-10 10:29:08 #7 type] 
+Type domain.Apustua is not enhanced.
+
+[2020-10-10 10:29:08 #8 type] 
+Type domain.PertsonaErregistratua is not enhanced.
+

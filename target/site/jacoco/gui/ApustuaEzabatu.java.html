@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ApustuaEzabatu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">ApustuaEzabatu.java</span></div><h1>ApustuaEzabatu.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import businessLogic.BLFacade;
+import domain.Apustua;
+
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.awt.event.ActionEvent;
+
+public class ApustuaEzabatu extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L29">	private JButton btnAtzera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Back&quot;));</span>
+	private JComboBox&lt;Apustua&gt; apustuBox;
+<span class="nc" id="L31">	private DefaultComboBoxModel&lt;Apustua&gt; ap = new DefaultComboBoxModel&lt;Apustua&gt;();</span>
+<span class="nc" id="L32">	private JButton btnApustuaEzabatu = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;DeleteBet&quot;));</span>
+	private JPanel contentPane;
+<span class="nc" id="L34">	private JLabel lblGertaera = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Event&quot;));</span>
+<span class="nc" id="L35">	private JLabel lblGaldera = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Question&quot;));</span>
+<span class="nc" id="L36">	private JLabel lblKuota = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Fee&quot;));</span>
+<span class="nc" id="L37">	private JLabel lblApostatutakoDirua = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;BetMoney&quot;));</span>
+	private JLabel lblGer;
+	private JLabel lblGal;
+	private JLabel lblKuo;
+	private JLabel lblApDiru;
+	
+	private JFrame frame;
+<span class="nc" id="L44">	private JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;ChooseNumber&quot;));</span>
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L50">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L53">					ApustuaEzabatu window = new ApustuaEzabatu();</span>
+<span class="nc" id="L54">					window.frame.setVisible(true);</span>
+<span class="nc" id="L55">				} catch (Exception e) {</span>
+<span class="nc" id="L56">					e.printStackTrace();</span>
+<span class="nc" id="L57">				}</span>
+<span class="nc" id="L58">			}</span>
+		});
+<span class="nc" id="L60">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L65">	public ApustuaEzabatu() {</span>
+<span class="nc" id="L66">		initialize();</span>
+<span class="nc" id="L67">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+<span class="nc" id="L73">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L74">		setBounds(100, 100, 472, 300);</span>
+<span class="nc" id="L75">		contentPane = new JPanel();</span>
+<span class="nc" id="L76">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="nc" id="L77">		setContentPane(contentPane);</span>
+<span class="nc" id="L78">		contentPane.setLayout(null);</span>
+		
+<span class="nc" id="L80">		lblNewLabel.setBounds(61, 16, 428, 20);</span>
+<span class="nc" id="L81">		getContentPane().add(lblNewLabel);</span>
+		
+<span class="nc" id="L83">		BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc" id="L84">		final int nan = Integer.parseInt(Login.nanZb.getText());</span>
+<span class="nc" id="L85">		List&lt;Apustua&gt; apustuak = bl.getApustuakByNan(nan);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		if (apustuak.isEmpty() ) {</span>
+<span class="nc" id="L87">			lblNewLabel.setText(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoBets&quot;));</span>
+		}
+		else {
+<span class="nc bnc" id="L90" title="All 2 branches missed.">			for (Apustua a:apustuak){</span>
+<span class="nc" id="L91">				ap.addElement(a);</span>
+<span class="nc" id="L92">			}</span>
+		}
+
+<span class="nc" id="L95">		apustuBox = new JComboBox&lt;Apustua&gt;();</span>
+<span class="nc" id="L96">		apustuBox.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L98">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">				if(apustuBox.getSelectedItem()!=null) {</span>
+<span class="nc" id="L100">					Apustua a = (Apustua) apustuBox.getSelectedItem();</span>
+<span class="nc" id="L101">					lblGer.setText(bl.getEvent(bl.getGaldera(bl.getKuota(a))).getDescription());</span>
+<span class="nc" id="L102">					lblGal.setText(bl.getGaldera(bl.getKuota(a)).getQuestion());</span>
+<span class="nc" id="L103">					lblKuo.setText(bl.getKuota(a).toString());</span>
+<span class="nc" id="L104">					lblApDiru.setText(Float.toString(a.getZenbatDiru()));</span>
+				}
+<span class="nc" id="L106">			}</span>
+		});
+<span class="nc" id="L108">		apustuBox.setBounds(163, 52, 115, 26);</span>
+<span class="nc" id="L109">		getContentPane().add(apustuBox);</span>
+<span class="nc" id="L110">		apustuBox.setModel(ap);</span>
+		
+<span class="nc" id="L112">		btnApustuaEzabatu.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L114">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">				if (apustuBox.getSelectedItem()!=null) {</span>
+<span class="nc" id="L116">					Apustua a = (Apustua) apustuBox.getSelectedItem();</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">					if(a.getKuota().getGaldera().getEvent().getEventDate().compareTo(Calendar.getInstance().getTime())&gt;0) {</span>
+<span class="nc" id="L118">						bl.apustuaEzabatu(a,nan);</span>
+<span class="nc" id="L119">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;DeleteBetReturnMoney&quot;));</span>
+<span class="nc" id="L120">						setVisible(false);</span>
+<span class="nc" id="L121">						UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L122">						up.setVisible(true);</span>
+<span class="nc" id="L123">						dispose();</span>
+<span class="nc" id="L124">					}</span>
+					else {
+<span class="nc" id="L126">						JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoDeleteBet&quot;));</span>
+					}
+<span class="nc" id="L128">				}</span>
+				else {
+<span class="nc" id="L130">					JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoBetToDelete&quot;));</span>
+				}
+<span class="nc" id="L132">			}</span>
+		});
+<span class="nc" id="L134">		btnApustuaEzabatu.setBounds(64, 199, 149, 29);</span>
+<span class="nc" id="L135">		getContentPane().add(btnApustuaEzabatu);</span>
+		
+<span class="nc" id="L137">		btnAtzera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L139">				setVisible(false);</span>
+<span class="nc" id="L140">				UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L141">				up.setVisible(true);</span>
+<span class="nc" id="L142">				dispose();</span>
+<span class="nc" id="L143">			}</span>
+		});
+<span class="nc" id="L145">		btnAtzera.setBounds(228, 199, 115, 29);</span>
+<span class="nc" id="L146">		getContentPane().add(btnAtzera);</span>
+		
+<span class="nc" id="L148">		lblGertaera.setBounds(15, 98, 69, 20);</span>
+<span class="nc" id="L149">		contentPane.add(lblGertaera);</span>
+		
+<span class="nc" id="L151">		lblGaldera.setBounds(15, 134, 69, 20);</span>
+<span class="nc" id="L152">		contentPane.add(lblGaldera);</span>
+		
+<span class="nc" id="L154">		lblKuota.setBounds(248, 98, 69, 20);</span>
+<span class="nc" id="L155">		contentPane.add(lblKuota);</span>
+		
+<span class="nc" id="L157">		lblApostatutakoDirua.setBounds(248, 134, 140, 20);</span>
+<span class="nc" id="L158">		contentPane.add(lblApostatutakoDirua);</span>
+		
+<span class="nc" id="L160">		lblGer = new JLabel(&quot;&quot;);</span>
+<span class="nc" id="L161">		lblGer.setBounds(92, 98, 141, 20);</span>
+<span class="nc" id="L162">		contentPane.add(lblGer);</span>
+		
+<span class="nc" id="L164">		lblGal = new JLabel(&quot;&quot;);</span>
+<span class="nc" id="L165">		lblGal.setBounds(83, 134, 150, 20);</span>
+<span class="nc" id="L166">		contentPane.add(lblGal);</span>
+		
+<span class="nc" id="L168">		lblKuo = new JLabel(&quot;&quot;);</span>
+<span class="nc" id="L169">		lblKuo.setBounds(307, 98, 143, 20);</span>
+<span class="nc" id="L170">		contentPane.add(lblKuo);</span>
+		
+<span class="nc" id="L172">		lblApDiru = new JLabel(&quot;&quot;);</span>
+<span class="nc" id="L173">		lblApDiru.setBounds(389, 134, 46, 20);</span>
+<span class="nc" id="L174">		contentPane.add(lblApDiru);</span>
+<span class="nc" id="L175">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

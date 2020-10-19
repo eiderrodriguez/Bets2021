@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DiruaSartuAtera.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Bets2021</a> &gt; <a href="index.source.html" class="el_package">gui</a> &gt; <span class="el_source">DiruaSartuAtera.java</span></div><h1>DiruaSartuAtera.java</h1><pre class="source lang-java linenums">package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import businessLogic.BLFacade;
+import domain.PertsonaErregistratua;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
+import java.awt.event.ActionEvent;
+
+public class DiruaSartuAtera extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField diruK;
+<span class="nc" id="L27">	private JRadioButton rdbtnDiruaSartu = new JRadioButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;PutMoney&quot;));;</span>
+<span class="nc" id="L28">	private JRadioButton rdbtnDiruaAtera = new JRadioButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;TakeMoneyAway&quot;));</span>
+<span class="nc" id="L29">	private JLabel lblKantitatea = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;HowMuchMoney&quot;));</span>
+<span class="nc" id="L30">	private JButton btnGorde = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Save&quot;));</span>
+<span class="nc" id="L31">	private ButtonGroup fareButtonGroup = new ButtonGroup();</span>
+<span class="nc" id="L32">	private JLabel lblMomentuHonetanKontuan = new JLabel(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;MoneyYouHaveInTheAccount&quot;));</span>
+<span class="nc" id="L33">	private JButton btnAtzera = new JButton(ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;Back&quot;));</span>
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L39">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L42">					DiruaSartuAtera frame = new DiruaSartuAtera();</span>
+<span class="nc" id="L43">					frame.setVisible(true);</span>
+<span class="nc" id="L44">				} catch (Exception e) {</span>
+<span class="nc" id="L45">					e.printStackTrace();</span>
+<span class="nc" id="L46">				}</span>
+<span class="nc" id="L47">			}</span>
+		});
+<span class="nc" id="L49">	}</span>
+	
+	//Ziurtatzeko zenbakia dela funtzio laguntzailea sortu dut (data zuzena dela ziurtatzeko).
+	private boolean isNumeric(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L55">			Integer.parseInt(hitza);</span>
+<span class="nc" id="L56">			emaitza = true;</span>
+<span class="nc" id="L57">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L58">			emaitza = false;</span>
+<span class="nc" id="L59">		}</span>
+<span class="nc" id="L60">		return emaitza;</span>
+	}
+
+	private boolean isNumericF(String hitza) {
+		boolean emaitza;
+		try {
+<span class="nc" id="L66">			Float.parseFloat(hitza);</span>
+<span class="nc" id="L67">			emaitza = true;</span>
+<span class="nc" id="L68">		} catch (NumberFormatException excepcion) {</span>
+<span class="nc" id="L69">			emaitza = false;</span>
+<span class="nc" id="L70">		}</span>
+<span class="nc" id="L71">		return emaitza;</span>
+	}
+
+	/**
+	 * Create the frame.
+	 */
+<span class="nc" id="L77">	public DiruaSartuAtera() {</span>
+<span class="nc" id="L78">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L79">		setBounds(100, 100, 450, 300);</span>
+<span class="nc" id="L80">		contentPane = new JPanel();</span>
+<span class="nc" id="L81">		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));</span>
+<span class="nc" id="L82">		setContentPane(contentPane);</span>
+<span class="nc" id="L83">		contentPane.setLayout(null);</span>
+		
+<span class="nc" id="L85">		rdbtnDiruaSartu.setBounds(99, 67, 120, 29);</span>
+<span class="nc" id="L86">		fareButtonGroup.add(rdbtnDiruaSartu);</span>
+<span class="nc" id="L87">		contentPane.add(rdbtnDiruaSartu);</span>
+		
+
+<span class="nc" id="L90">		rdbtnDiruaAtera.setBounds(234, 67, 155, 29);</span>
+<span class="nc" id="L91">		fareButtonGroup.add(rdbtnDiruaAtera);</span>
+<span class="nc" id="L92">		contentPane.add(rdbtnDiruaAtera);</span>
+		
+<span class="nc" id="L94">		lblKantitatea.setBounds(28, 108, 146, 20);</span>
+<span class="nc" id="L95">		contentPane.add(lblKantitatea);</span>
+		
+<span class="nc" id="L97">		diruK = new JTextField();</span>
+<span class="nc" id="L98">		diruK.setBounds(224, 105, 146, 26);</span>
+<span class="nc" id="L99">		contentPane.add(diruK);</span>
+<span class="nc" id="L100">		diruK.setColumns(10);</span>
+		
+<span class="nc" id="L102">		btnGorde.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L104">				BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc bnc" id="L105" title="All 8 branches missed.">				if (!Login.nanZb.getText().isEmpty() &amp;&amp; !diruK.getText().isEmpty() &amp;&amp; isNumeric(Login.nanZb.getText()) &amp;&amp; isNumericF(diruK.getText())) {</span>
+<span class="nc" id="L106">					int nan = Integer.parseInt(Login.nanZb.getText());</span>
+<span class="nc" id="L107">					PertsonaErregistratua per = bl.getErregistratuaByNan(nan);</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">					if (per!=null) {</span>
+<span class="nc" id="L109">						float dirua = Float.parseFloat(diruK.getText());</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">						if (rdbtnDiruaSartu.isSelected()) {</span>
+<span class="nc" id="L111">							bl.updateDirua(nan, dirua);</span>
+<span class="nc" id="L112">							JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;MoneySave&quot;));</span>
+<span class="nc" id="L113">							setVisible(false);</span>
+<span class="nc" id="L114">							UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L115">							up.setVisible(true);</span>
+<span class="nc" id="L116">							dispose();</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">						} else if (rdbtnDiruaAtera.isSelected()) {</span>
+<span class="nc" id="L118">							float dir = bl.updateDirua(nan, dirua*-1);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">							if (dir&lt;0) {</span>
+<span class="nc" id="L120">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;NoMoney&quot;));</span>
+<span class="nc" id="L121">								bl.updateDirua(nan, dirua);</span>
+							} else {
+<span class="nc" id="L123">								JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;MoneySave&quot;));</span>
+<span class="nc" id="L124">								setVisible(false);</span>
+<span class="nc" id="L125">								UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L126">								up.setVisible(true);</span>
+<span class="nc" id="L127">								dispose();</span>
+							}
+<span class="nc" id="L129">						} else {</span>
+<span class="nc" id="L130">							JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;PutTakeMoney&quot;));</span>
+						}
+					} 					
+					
+<span class="nc" id="L134">				} else {</span>
+<span class="nc" id="L135">					JOptionPane.showMessageDialog(null, ResourceBundle.getBundle(&quot;Etiquetas&quot;).getString(&quot;MoneyNumber&quot;));</span>
+						
+				}
+<span class="nc" id="L138">			}</span>
+		});
+<span class="nc" id="L140">		btnGorde.setBounds(155, 160, 115, 29);</span>
+<span class="nc" id="L141">		contentPane.add(btnGorde);</span>
+		
+<span class="nc" id="L143">		lblMomentuHonetanKontuan.setBounds(15, 29, 398, 20);</span>
+<span class="nc" id="L144">		contentPane.add(lblMomentuHonetanKontuan);</span>
+		
+<span class="nc" id="L146">		BLFacade bl = MainGUI.getBusinessLogic();</span>
+<span class="nc" id="L147">		int nan = Integer.parseInt(Login.nanZb.getText());</span>
+<span class="nc" id="L148">		PertsonaErregistratua per = (PertsonaErregistratua)bl.getUserByNan(nan);</span>
+<span class="nc" id="L149">		JLabel lblDiruKontu = new JLabel(Float.toString(per.getDiruKantitatea()));</span>
+<span class="nc" id="L150">		lblDiruKontu.setBounds(374, 29, 69, 20);</span>
+<span class="nc" id="L151">		contentPane.add(lblDiruKontu);</span>
+		
+<span class="nc" id="L153">		btnAtzera.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L155">				setVisible(false);</span>
+<span class="nc" id="L156">				UserPantaila up = new UserPantaila();</span>
+<span class="nc" id="L157">				up.setVisible(true);</span>
+<span class="nc" id="L158">				dispose();</span>
+<span class="nc" id="L159">			}</span>
+		});
+<span class="nc" id="L161">		btnAtzera.setBounds(155, 199, 115, 29);</span>
+<span class="nc" id="L162">		contentPane.add(btnAtzera);</span>
+<span class="nc" id="L163">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,121 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-05-05 10:40:16 #1 type] 
+Type domain.Pertsona is not enhanced.
+
+[2020-05-05 10:40:16 #2 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2020-05-05 10:40:16 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-05-05 10:40:16 #4 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-05-05 10:40:16 #5 type] 
+Type domain.Event is not enhanced.
+
+[2020-05-05 10:40:16 #6 type] 
+Type domain.Apustua is not enhanced.
+
+[2020-05-05 10:40:16 #7 type] 
+Type domain.PertsonaErregistratua is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-05-05 15:46:24 #1 store] 
+Database '/home/eider/git/3iterazioa/Bets2020/src/main/resources/bets20.temp' is opened by 2006@eider-tp300la
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-05-05 16:11:32 #1 type] 
+Type domain.Pertsona is not enhanced.
+
+[2020-05-05 16:11:32 #2 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2020-05-05 16:11:32 #3 type] 
+Type domain.Question is not enhanced.
+
+[2020-05-05 16:11:32 #4 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-05-05 16:11:32 #5 type] 
+Type domain.Event is not enhanced.
+
+[2020-05-05 16:11:32 #6 type] 
+Type domain.Apustua is not enhanced.
+
+[2020-05-05 16:11:32 #7 type] 
+Type domain.PertsonaErregistratua is not enhanced.
+
+[2020-05-05 16:15:47 #8 type.registry] 
+New type domain.DiruMugimendua
+
+[2020-05-05 16:15:47 #9 type] 
+Type domain.DiruMugimendua is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-05-05 20:49:26 #1 store] 
+Database '/home/eider/git/3iterazioa/Bets2020/src/main/resources/bets20.temp' has been recovered (tr. 1-2)
+
+[2020-05-05 20:49:26 #2 store] 
+Database '/home/eider/git/3iterazioa/Bets2020/src/main/resources/bets20.temp' is opened by 2540@eider-tp300la
+
+[2020-05-05 20:49:26 #3 type.registry] 
+New type domain.Pertsona
+
+[2020-05-05 20:49:26 #4 type] 
+Type domain.Pertsona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2020-05-05 20:52:18 #1 store] 
+Database '/home/eider/git/3iterazioa/Bets2020/src/main/resources/bets20.temp' is opened by 2781@eider-tp300la
+
+[2020-05-05 20:52:18 #2 type] 
+Type domain.Pertsona is not enhanced.
+
+[2020-05-05 20:52:18 #3 type.registry] 
+New type domain.PertsonaErregistratua
+
+[2020-05-05 20:52:18 #4 type] 
+Type domain.PertsonaErregistratua is not enhanced.
+
+[2020-05-05 20:52:18 #5 type.registry] 
+New type domain.Apustua
+
+[2020-05-05 20:52:18 #6 type.registry] 
+New type java.util.Vector<domain.Apustua>
+
+[2020-05-05 20:52:18 #7 type] 
+Type domain.Apustua is not enhanced.
+
+[2020-05-05 20:52:18 #8 type.registry] 
+New type domain.Kuota
+
+[2020-05-05 20:52:18 #9 type] 
+Type domain.Kuota is not enhanced.
+
+[2020-05-05 20:52:18 #10 type.registry] 
+New type domain.Question
+
+[2020-05-05 20:52:18 #11 type] 
+Type domain.Question is not enhanced.
+
+[2020-05-05 20:52:18 #12 type.registry] 
+New type java.util.Vector<domain.Kuota>
+
+[2020-05-05 20:52:18 #13 type.registry] 
+New type domain.Event
+
+[2020-05-05 20:52:18 #14 type] 
+Type domain.Event is not enhanced.
+
+[2020-05-05 20:52:18 #15 type.registry] 
+New type java.util.Vector<domain.Question>
+
+[2020-05-05 20:52:18 #16 type.registry] 
+New type java.util.Vector<java.lang.Object>
+

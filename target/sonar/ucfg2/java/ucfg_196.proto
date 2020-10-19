@@ -1,0 +1,88 @@
+
+PbusinessLogic.BLFacadeImplementation#getGaldera(Ldomain/Kuota;)Ldomain/Question;f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¿ ¿("startingBlock*≈
+2f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¬ ¬(ï
+í
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¬ ¬(
+idomain.KuotaContainer"__id*
+""∑
+¥
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¬ ¬(
+idomain.KuotaContainer"
+__arrayGet*
+
+listKCjava.util.List*
+""*
+4
+1*’
+3f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaƒ ƒ(„‡
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaƒ ƒ(
+%4domain.Question"3domain.KuotaContainer#getGaldera()Ldomain/Question;*
+
+idomain.KuotaContainer2getGaldera()"Å
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaƒ ƒ(
+
+%4domain.Question*¡
+startingBlockf
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¿ ¿($´
+®
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.javaø ø(
+%5"
+__annotate*
+javax.jws.WebMethod*
+
+kdomain.Kuotaî
+ë
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¿" ¿(#
+kdomain.Kuota"__annotation*
+
+%5*
+6*–
+4f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java√ √(Ÿ÷
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java√ √(
+%1domain.Kuota".domain.KuotaContainer#getKuota()Ldomain/Kuota;*
+
+idomain.KuotaContainer2
+getKuota()æª
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java√ √($	
+%2int"domain.Kuota#getKuotaNumber()I*
+
+%1domain.Kuota2getKuotaNumber()Ω∫
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java√& √(8	
+%3int"domain.Kuota#getKuotaNumber()I*
+
+kdomain.Kuota2getKuotaNumber()*
+2
+3*´
+6f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¡  ¡(5íè
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¡  ¡(7
+%0java.util.List"LbusinessLogic.BLFacadeImplementation#getListKuotaContainer()Ljava/util/List;*(&
+$businessLogic.BLFacadeImplementation2getListKuotaContainer()£
+†
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java¡ ¡(8
+listKCjava.util.List"__id*
+
+%0java.util.List*
+2*›
+1f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java«	 «("p
+f
+Z/Users/eiderrodriguez/git/Bets2021/src/main/java/businessLogic/BLFacadeImplementation.java« «(
+"":
+kdomain.KuotaB(&
+$businessLogic.BLFacadeImplementation

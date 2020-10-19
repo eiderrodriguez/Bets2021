@@ -1,0 +1,92 @@
+
+(domain.Event#equals(Ljava/lang/Object;)ZL
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java{ {("startingBlock*≠
+2N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÑ
+ Ñ("X
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÑ Ñ(
+""*†
+3N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÇ Ç(ã
+à
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÇ Ç(
+otherdomain.Event"__id*
+
+objjava.lang.Objectï
+í
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÉ É(
+%2java.lang.Integer"__id*!*
+domain.Event"
+eventNumberú
+ô
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÉ É(&
+%3java.lang.Integer"__id*(*&
+
+otherdomain.Event"
+eventNumber*
+2
+1*Ç
+startingBlockL
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java{ {("ñ
+ì
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaz z(
+
+%4"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Object
+}
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java{ {(!
+objjava.lang.Object"__annotation*
+
+%4*	
+5
+6
+8*≠
+4N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÅ
+ Å("X
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÅ Å(
+""*÷
+5N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÄ Ä(∂≥
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÄ Ä(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+domain.Event2
+getClass()øº
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÄ Ä("
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+objjava.lang.Object2
+getClass()*
+3
+4*©
+6L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java
+ ("V
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java (
+""*©
+8L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java}
+ }("V
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.java} }(
+""*≠
+1N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÖ	 Ö("X
+N
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Event.javaÖ Ö(
+"":
+objjava.lang.ObjectB
+domain.Event

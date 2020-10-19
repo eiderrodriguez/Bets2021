@@ -1,0 +1,53 @@
+
+9domain.PertsonaErregistratua#toString()Ljava/lang/String;\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaM M("1*±
+1\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(ÕÒ
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(
+%0java.lang.String",domain.Pertsona#getIzena()Ljava/lang/String;* 
+domain.PertsonaErregistratua2
+getIzena()¤
+¡
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+ ÛØ
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN N(1
+%2java.lang.String"/domain.Pertsona#getAbizena1()Ljava/lang/String;* 
+domain.PertsonaErregistratua2getAbizena1()·
+´
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(1
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String¤
+¡
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(6
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+ ÛØ
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN8 N(J
+%5java.lang.String"/domain.Pertsona#getAbizena2()Ljava/lang/String;* 
+domain.PertsonaErregistratua2getAbizena2()·
+´
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN	 N(J
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.String"x
+\
+R/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/PertsonaErregistratua.javaN N(K
+
+%6java.lang.StringB 
+domain.PertsonaErregistratua
