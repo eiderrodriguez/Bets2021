@@ -1,0 +1,37 @@
+
+)domain.Kuota#toString()Ljava/lang/String;L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.javaZ Z("1*…
+1L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[	 [(í
+è
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[	 [(
+%0java.lang.String"__id*!*
+domain.Kuota"
+pronostikoaî
+ë
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[	 [(
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+;µ
+≤
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[ [(2
+%2java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""ß
+§
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[	 [(2
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String"h
+L
+B/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Kuota.java[ [(3
+
+%3java.lang.StringB
+domain.Kuota

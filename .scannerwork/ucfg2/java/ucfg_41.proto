@@ -1,0 +1,92 @@
+
++domain.Question#equals(Ljava/lang/Object;)ZQ
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÂ Â("startingBlock*³
+2Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaË
+ Ë("[
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaË Ë(
+""*»
+3Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÉ É(!‘
+Ž
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÉ É("
+otherdomain.Question"__id*
+
+objjava.lang.Objectž
+›
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÊ Ê(
+%2java.lang.Integer"__id*'*%
+domain.Question"
+questionNumber¥
+¢
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÊ Ê(,
+%3java.lang.Integer"__id*.*,
+
+otherdomain.Question"
+questionNumber*
+2
+1*“
+startingBlockQ
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÂ Â("›
+˜
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÁ Á(
+
+%4"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Object…
+‚
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÂ Â(!
+objjava.lang.Object"__annotation*
+
+%4*	
+5
+6
+8*³
+4Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÈ
+ È("[
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÈ È(
+""*â
+5Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÇ Ç(¼¹
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÇ Ç(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+domain.Question2
+getClass()Â¿
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÇ Ç("
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+objjava.lang.Object2
+getClass()*
+3
+4*³
+6Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÆ
+ Æ("[
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÆ Æ(
+""*³
+8Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÄ
+ Ä("[
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÄ Ä(
+""*³
+1Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÌ	 Ì("[
+Q
+E/Users/eiderrodriguez/git/Bets2021/src/main/java/domain/Question.javaÌ Ì(
+"":
+objjava.lang.ObjectB
+domain.Question
