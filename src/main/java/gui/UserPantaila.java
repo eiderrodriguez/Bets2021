@@ -5,14 +5,18 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+
+import adapter.UserAdapter;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 
-public class UserPantaila extends JFrame {
-
+public class UserPantaila extends JFrame{
+	
 	private JPanel contentPane;
 	private JButton btnSaioaItxi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("LogOut"));
 	private JButton btnDiruaSartuAtera = new JButton(ResourceBundle.getBundle("Etiquetas").getString("PutTakeMoney"));
@@ -21,6 +25,8 @@ public class UserPantaila extends JFrame {
 	private JButton gertaeraIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SeeEvent"));
 	private JButton btnApustuaEgin = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Bet"));
 	private JButton btnErreplikatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Replicate"));
+	private JButton userapustuak = new JButton(ResourceBundle.getBundle("Etiquetas").getString("UserAp"));
+	
 	
 	/**
 	 * Launch the application.
@@ -123,7 +129,22 @@ public class UserPantaila extends JFrame {
 				dispose();
 			}
 		});
-		btnErreplikatu.setBounds(230, 140, 172, 40);
+		btnErreplikatu.setBounds(42, 193, 172, 40);
 		contentPane.add(btnErreplikatu);
+		
+		
+		userapustuak.setBounds(42, 193, 173, 41);
+		contentPane.add(userapustuak);
+		userapustuak.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				UserApustuak e = new UserApustuak();
+				e.setVisible(true);
+				dispose();
+			}
+		});
+		userapustuak.setBounds(230, 140, 172, 40);
+		contentPane.add(userapustuak);
 	}
+
 }

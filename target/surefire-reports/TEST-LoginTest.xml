@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="LoginTest" time="5.231" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="LoginTest" time="5.272" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="14.0.2+12-46"/>
@@ -21,7 +21,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/eiderrodriguez/Desktop/Eclipse/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf13784169601141696519.tmp"/>
+    <property name="classworlds.conf" value="/Users/eiderrodriguez/Desktop/Eclipse/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf11075210289483859391.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/eiderrodriguez/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="jdk.debug" value="release"/>
@@ -54,8 +54,8 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="test1" classname="LoginTest" time="0.082"/>
-  <testcase name="test2" classname="LoginTest" time="3.24"/>
-  <testcase name="test3" classname="LoginTest" time="0.417"/>
-  <testcase name="test4" classname="LoginTest" time="0.582"/>
+  <testcase name="test1" classname="LoginTest" time="0.084"/>
+  <testcase name="test2" classname="LoginTest" time="2.572"/>
+  <testcase name="test3" classname="LoginTest" time="1.111"/>
+  <testcase name="test4" classname="LoginTest" time="0.613"/>
 </testsuite>

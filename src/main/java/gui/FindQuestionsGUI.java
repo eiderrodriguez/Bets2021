@@ -4,7 +4,11 @@ import businessLogic.BLFacade;
 import configuration.UtilDate;
 
 import com.toedter.calendar.JCalendar;
+
+import domain.Event;
 import domain.Question;
+import iterator.ExtendedIterator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -118,18 +122,21 @@ public class FindQuestionsGUI extends JFrame {
 
 						BLFacade facade=MainGUI.getBusinessLogic();
 
-						Vector<domain.Event> events=facade.getEvents(firstDay);
+						ExtendedIterator<Event> events = facade.getEvents(firstDay);
 
-						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarMio.getTime()));
+						if (!events.hasNext() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarMio.getTime()));
 						else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarMio.getTime()));
-						for (domain.Event ev:events){
+						//for (domain.Event ev : events)
+						while(events.hasNext())	{
+							Event e = events.next();
+						
 							Vector<Object> row = new Vector<Object>();
 
-							System.out.println("Events "+ev);
+							System.out.println("Events "+e);
 
-							row.add(ev.getEventNumber());
-							row.add(ev.getDescription());
-							row.add(ev); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
+							row.add(e.getEventNumber());
+							row.add(e.getDescription());
+							row.add(e); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,2)
 							tableModelEvents.addRow(row);		
 						}
 						tableEvents.getColumnModel().getColumn(0).setPreferredWidth(25);

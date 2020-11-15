@@ -10,66 +10,34 @@ import javax.xml.ws.Service;
 
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
+import factory.BusinessLogicFactory;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
 public class ApplicationLauncher {
 	
-	public static void main(String[] args) {
-
-		ConfigXML c=ConfigXML.getInstance();
-	
-		System.out.println(c.getLocale());
-		
+	public static void main(String[] args){
+		ConfigXML c = ConfigXML.getInstance();
+		System.out.println(c.getLocale());		
 		Locale.setDefault(new Locale(c.getLocale()));
-		
 		System.out.println("Locale: "+Locale.getDefault());
-		
 		Login a=new Login();
-		
 
 		try {
 			
 			BLFacade appFacadeInterface;
-//			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
-//			UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			
-			if (c.isBusinessLogicLocal()) {
-				DataAccess da= new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
-				appFacadeInterface=new BLFacadeImplementation(da);
-			}
-			else { //If remote
-				
-				String serviceName= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName()+"?wsdl";
-				 
-				//URL url = new URL(serviceName);
-				URL url = new URL("http://localhost:9999/ws?wsdl");
-		 
-		        //1st argument refers to wsdl document above
-				//2nd argument is service name, refer to wsdl document above
-//		        QName qname = new QName("http://businessLogic/", "FacadeImplementationWSService");
-		        QName qname = new QName("http://businessLogic/", "BLFacadeImplementationService");
-		 
-		        Service service = Service.create(url, qname);
-		 
-		         appFacadeInterface = service.getPort(BLFacade.class);
-			} 
-			/*if (c.getDataBaseOpenMode().equals("initialize")) 
-				appFacadeInterface.initializeBD();
-				*/
+			appFacadeInterface = BusinessLogicFactory.createBusinessLogic(c.isBusinessLogicLocal());
 			MainGUI.setBussinessLogic(appFacadeInterface);
 			a.setVisible(true);
-
-			
+		
 		}catch (Exception e) {
 			//a.jLabelSelectOption.setText("Error: "+e.toString());
 			//a.jLabelSelectOption.setForeground(Color.RED);		
+			
 			System.out.println("Error in ApplicationLauncher: "+e.toString());
 		}
-		//a.pack();
-
-
 	}
 
 }

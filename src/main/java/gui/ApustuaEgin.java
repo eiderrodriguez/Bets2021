@@ -27,6 +27,8 @@ import domain.Kuota;
 import domain.Pertsona;
 import domain.PertsonaErregistratua;
 import domain.Question;
+import iterator.ExtendedIterator;
+import iterator.ExtendedIteratorEvents;
 
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -320,9 +322,9 @@ public class ApustuaEgin extends JFrame{
 					try {
 						BLFacade facade = MainGUI.getBusinessLogic();
 				
-						Vector<domain.Event> events = facade.getEvents(firstDay);
+						ExtendedIterator<Event> events = facade.getEvents(firstDay);
 
-						if (events.isEmpty())
+						if (!events.hasNext())
 							lblHautatutakoGertaera.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
 									+ ": " + dateformat1.format(calendarMio.getTime()));
 						else
@@ -331,11 +333,15 @@ public class ApustuaEgin extends JFrame{
 						comboBoxGertaera.removeAllItems();
 						System.out.println("Events " + events);
 
-						for (domain.Event ev : events)
-							gertaerak.addElement(ev);
+						//for (domain.Event ev : events)
+						while(events.hasNext())	{
+							gertaerak.addElement(events.next());
+							
+						}
 						comboBoxGertaera.repaint();
-
-						if (events.size() == 0)
+						
+						events.goFirst();
+						if (!events.hasNext())
 							btnApustuaEgin.setEnabled(false);
 						else
 							btnApustuaEgin.setEnabled(true);
